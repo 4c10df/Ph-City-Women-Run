@@ -13,7 +13,7 @@ const CommunityEvent = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [postLimit, setPostLimit] = useState(); // Adjust limit as needed
+  const [postLimit, setPostLimit] = useState(6);
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
@@ -31,9 +31,6 @@ const CommunityEvent = () => {
       }
       content {
         html
-      }
-      author {
-        name
       }
     }
   }`;
@@ -67,6 +64,31 @@ const CommunityEvent = () => {
   };
 
   const groupedPosts = chunkPosts(data.slice(0, postLimit), 6);
+
+  // Format date function
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
+
+    // Determine the correct suffix for the day
+    const getDaySuffix = (day) => {
+      if (day > 3 && day < 21) return "th";
+      switch (day % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    };
+
+    return `${day}${getDaySuffix(day)} ${month} ${year}`;
+  };
 
   return (
     <section className="relative flex justify-center flex-col items-center w-full h-auto overflow-hidden">
@@ -108,11 +130,8 @@ const CommunityEvent = () => {
                             <span className="text-[#7E8EA2] txt">
                               {post.excerpt}
                             </span>
-                            <span className="text-[#353F50] leading-[18.9px] text-[14px]">
-                              by &nbsp;
-                              <strong className="text-[#353F50] txt4">
-                                {post.author?.name}
-                              </strong>
+                            <span className="text-[#7E8EA2] leading-[18.9px] text-[14px]">
+                              {formatDate(post.date)}
                             </span>
                           </div>
                         </Link>
@@ -138,11 +157,8 @@ const CommunityEvent = () => {
                             <span className="text-[#7E8EA2] txt">
                               {post.excerpt}
                             </span>
-                            <span className="text-[#353F50] leading-[18.9px] text-[14px]">
-                              by &nbsp;
-                              <strong className="text-[#353F50] txt4">
-                                {post.author?.name}
-                              </strong>
+                            <span className="text-[#7E8EA2] leading-[18.9px] text-[14px]">
+                              {formatDate(post.date)}
                             </span>
                           </div>
                         </Link>

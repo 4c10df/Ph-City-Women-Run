@@ -68,7 +68,7 @@ function RunFast() {
   return (
     <>
       <section className="relative bg-white flex justify-center items-center w-full h-auto ">
-        <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[90px] at500:px-[72px] my-0 mx-auto">
+        <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[90px] sm:px-[72px] my-0 mx-auto">
           <div className="z-10 flex flex-col gap-[40px] items-start w-full">
             <div className="relative flex justify-end items-end w-full h-auto  ">
               <div className="relative grid grid-cols-1 silver:grid-cols-2 gap-3 w-full h-full overflow-hidden">

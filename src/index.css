@@ -71,9 +71,9 @@ background: linear-gradient(160.22deg, rgba(255, 255, 255, 0.4) 5.08%, rgba(255,
   /* Apply gradient along the border */
   box-shadow: 0px 4px 24px -1px rgba(255, 255, 255, 0.25);
   /* White shadow with transparency */
-  backdrop-filter: blur(60px);
+  backdrop-filter: blur(-16px);
   /* Blurs the background behind the element */
-  background: #41AAEC;
+  /* background: #41AAEC; */
   /* Solid background color */
 }
 
@@ -118,7 +118,7 @@ nav ul li span {
 
 /* fonts */
 h1 {
-  font-size: 40px;
+  font-size: 20px;
   line-height: 52px;
   text-align: center;
   font-weight: 700;
@@ -127,7 +127,7 @@ h1 {
 
 h2 {
   font-weight: 800;
-  font-size: 48px;
+  font-size: 40px;
   line-height: 52px;
   font-family: 'Geist Sans', sans-serif;
 }

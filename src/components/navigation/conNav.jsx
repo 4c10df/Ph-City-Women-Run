@@ -8,7 +8,8 @@ const ConferenecNav = () => {
     const [activeLink, setActiveLink] = useState("");
      const [scrolled, setScrolled] = useState(false);
      const [isScrollingUp, setIsScrollingUp] = useState(true);
-    const [lastScrollY, setLastScrollY] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
+   const isConferencePage = pathname === "/conference";
     
 
      useEffect(() => {
@@ -47,12 +48,12 @@ const ConferenecNav = () => {
           <ul className="flex justify-start items-start space-x-4">
             <Link className="flex w-full" to="/conference">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]  ${
-                  activeLink === "conference"
-                    ? "border-b-[4px] border-b-[#FEEBFD]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("conference")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px] 
+                 ${
+                   isConferencePage
+                     ? " border-b-[4px] border-b-[#FEEBFD]"
+                     : "!border-b-[0px] !border-none"
+                 }`}
               >
                 <span>Conference</span>
               </li>

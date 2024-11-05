@@ -74,6 +74,32 @@ const BlogPostDetails = () => {
     });
   };
 
+  // Format date function
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = date.getDate();
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
+
+    // Determine the correct suffix for the day
+    const getDaySuffix = (day) => {
+      if (day > 3 && day < 21) return "th";
+      switch (day % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    };
+
+    return `${day}${getDaySuffix(day)} ${month} ${year}`;
+  };
+
+
   const handleShareLink = () => {
     const pageURL = window.location.href;
     const pageTitle = post.title; // Use the post title for sharing
@@ -102,7 +128,7 @@ const BlogPostDetails = () => {
         <div className="static flex flex-col justify-center items-center w-full max-w-[1208px] px-[15px] pt-[230px] pb-[30px] at500:px-[72px] my-0 mx-auto">
           <div className="flex flex-col w-full">
             <div className="flex gap-[16px] flex-col justify-start items-start w-full mb-[30px]">
-              <h1>{post.title}</h1>
+              <h1>{post?.title}</h1>
               <span className="text-[#7E8EA2] txt w-[400px]">
                 {post.excerpt}
               </span>
@@ -120,9 +146,7 @@ const BlogPostDetails = () => {
                     <span
                       data-aos="fade-up"
                       className="txt4 leading-[28px] text-[#667085]"
-                    >
-                      {post.author.name}
-                    </span>
+                    ></span>
                   </div>
                   <div className="flex flex-col gap-[12px]">
                     <span
@@ -135,7 +159,7 @@ const BlogPostDetails = () => {
                       data-aos="fade-up"
                       className="txt4 leading-[28px] text-[#667085]"
                     >
-                      {post.date}
+                      {formatDate(post.date)}
                     </span>
                   </div>
                 </div>

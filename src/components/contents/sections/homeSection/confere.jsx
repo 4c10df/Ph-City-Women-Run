@@ -77,7 +77,7 @@ function ConferenceSection() {
           >
             <div className="absolute  flex flex-col justify-start items-start px-[20px] at500:px-[60px] gap-[10px] sm:gap-[22px]  w-full">
               <div className="flex bg-[#5C176F] justify-start items-start md:w-[500px] px-[24px] py-[10px] rounded-[12px] md:rounded-[0] md:rounded-l-[12px]">
-                <h2 className="text-white !text-[40px]">{data.title1}</h2>
+                <h2 className="text-white text-[20px] sm:!text-[40px]">{data.title1}</h2>
               </div>
               <div className="flex gap-[40px] flex-col justify-start items-start w-full">
                 <span className="text-white max-w-[456px] z-10">

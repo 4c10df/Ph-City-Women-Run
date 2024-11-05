@@ -15,7 +15,7 @@ function Thecount() {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-  slider(where: {id: "cm2ls6fnn05sm07pqymj9i2bz"}) {
+  homepage(where: {id: "cm34sksea08cp07pnkzjsinh1"}) {
     
     schedule
   }
@@ -25,7 +25,7 @@ function Thecount() {
     const fetchData = async () => {
       try {
         const response = await axios.post(hygraphEndpoint, { query });
-        setData(response.data.data.slider);
+        setData(response.data.data.homepage);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -64,8 +64,8 @@ function Thecount() {
         backgroundPosition: "center",
       }}
     >
-      <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[72px] my-0 mx-auto">
-        <div className="bg-[#8D12AB] flex justify-center items-center rounded-[16px] silver:py-[4px] p-[15px] at500:px-[40px] w-full">
+      <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[25px] sm:py-[10px] sm:px-[72px] my-0 mx-auto">
+        <div className="bg-[#8D12AB] flex justify-center items-center rounded-[16px] silver:py-[4px] p-[15px] sm:px-[40px] w-full">
           <Countdown targetDate={data.schedule} />
         </div>
       </div>

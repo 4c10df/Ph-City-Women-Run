@@ -6,6 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../../Button";
 import LatestBlogs from "../../APIs/latestBlog";
+import Link from "../../link";
 
 function CommunitEvents() {
   useEffect(() => {
@@ -25,7 +26,9 @@ function CommunitEvents() {
               data-aos-duration="1000"
               className="flex bg-[#8C12AB] p-4 flex-col justify-center items-start rounded-r-[8px]"
             >
-              <h2 className="text-white">NEWS & COMMUNITY EVENTS</h2>
+              <h2 className="text-white !leading-[24px] sm:!leading-[52px] !text-[20px] sm:!text-[40px]">
+                NEWS & COMMUNITY EVENTS
+              </h2>
               {/* <span
                 data-aos="fade-up"
                 data-aos-duration="1000"
@@ -42,14 +45,16 @@ function CommunitEvents() {
             <LatestBlogs />
 
             <div className="flex justify-center items-center w-full">
-              <div
-                data-aos="zoom-in"
-                className="flex pt-[20px] justify-start w-[201px] z-40"
-              >
-                <Button size="play" className="">
-                  Explore all
-                </Button>
-              </div>
+              <Link to="/news">
+                <div
+                  data-aos="zoom-in"
+                  className="flex pt-[20px] justify-start w-[201px] z-40"
+                >
+                  <Button size="play" className="">
+                    Explore all
+                  </Button>
+                </div>
+              </Link>
             </div>
           </div>
           <div className=" absolute top-[4px] flex justify-start items-start w-full auto-container">

@@ -80,7 +80,7 @@ function AchievementsSection() {
 
   return (
     <section className="relative flex flex-col justify-center items-center  bg-[#203749] py-[100px] w-full overflow-hidden">
-      <div className="static z-10 auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[72px] my-0 mx-auto">
+      <div className="static z-10 auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[30px] sm:py-[10px] sm:px-[72px] my-0 mx-auto">
         <div className="grid at594:grid-cols-2 silver:grid-cols-4 gap-y-5 justify-center items-center gap-x-[32px] w-full">
           <div className="flex flex-col justify-center items-center gap-[8px] w-full">
             <span>

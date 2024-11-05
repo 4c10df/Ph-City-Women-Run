@@ -10,8 +10,6 @@ import image2 from "../../image/homeImg/3bb2c3f5d20885f4e7cf179881163371.jpeg";
 import shape1 from "../../image/shapes/Frame 11686560754.png";
 import shape2 from "../../image/shapes/Frame 1686560676.png";
 
-
-
 function Venue() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -21,20 +19,14 @@ function Venue() {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-  homepage(where: {id: "cm2lshq67068l07pnzywod0ju"}) {
+   conference(where: {id: "cm33ab6lb2cpa06oc6ml2hgzu"}) {
+    nameOfSection
+    title
+    image1 {
+      url
+    }
+   
     
-    runner
-    registeredAthletes
-    yearsOfRunning
-    kilometersCovered
-    subtext1
-    subtext2
-    subtext3
-    subtext4
-    subtitle1
-    subtitle2
-    subtitle3
-    subtitle4
   }
 }`;
 
@@ -42,7 +34,7 @@ function Venue() {
     const fetchData = async () => {
       try {
         const response = await axios.post(hygraphEndpoint, { query });
-        setData(response.data.data.homepage);
+        setData(response.data.data.conference);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -75,12 +67,12 @@ function Venue() {
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
         <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
           <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-            <h6 className="text-[#1F2126]">PHCWR Conference Venue</h6>
+            <h6 className="text-[#1F2126]">{data.nameOfSection}</h6>
             <div className="flex flex-col gap-[8px] justify-center items-start bg-white max-w-[420px] rounded-[12px] py-[12px] px-[24px]">
               <div className="flex gap-[10px] justify-center items-center">
                 <MdLocationPin size={24} className="text-[#5C176F]" />
                 <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
-                  LA Kings Event Centre (Golden Tulip Hotel) Port Harcourt.
+                  {data.title}
                 </span>
               </div>
             </div>
@@ -90,7 +82,7 @@ function Venue() {
             className="relative flex justify-start items-start h-[282px] w-full rounded-[12px] overflow-hidden"
           >
             <LoadBlurHashImage
-              src={image2}
+              src={data.image1.url}
               blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
               className="w-full h-auto object-cover rounded-[12px]"
               alt="Discover Your Potential"

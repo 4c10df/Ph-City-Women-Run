@@ -1,13 +1,5 @@
-import React from "react";
-import { useEffect } from "react";
-import {
-  TbCircleNumber1,
-  TbCircleNumber2,
-  TbCircleNumber3,
-  TbCircleNumber4,
-  TbCircleNumber5,
-} from "react-icons/tb";
-import imageOne from "../../image/homeImg/a011595e6083594c8f66c18651dfd68d.gif";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import shape1 from "../../image/shapes/Frame 11686560754.png";
 import shape2 from "../../image/shapes/Frame 1686560676.png";
 import logo from "../../image/logo/8e1d23d6755ed3efab7ae67d16b117c0.png";
@@ -21,9 +13,55 @@ import Button from "../../Button";
 import ShirtSlider from "../../../slider/shirtSlide";
 
 function ShirtsSection() {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const hygraphEndpoint =
+    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+
+  const query = `{
+  homepage(where: {id: "cm34edcgf02oa07pnws7adft7"}) {
+    
+    
+    
+    title1
+    subtitle1
+    
+  }
+}`;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(hygraphEndpoint, { query });
+        setData(response.data.data.homepage);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   useEffect(() => {
     AOS.init({ duration: 2000, once: true });
   }, []);
+
+  if (loading)
+    return (
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
+        Loading...
+      </p>
+    );
+  if (error)
+    return (
+      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+        Let's get you back online
+      </p>
+    );
 
   return (
     <>
@@ -43,14 +81,12 @@ function ShirtsSection() {
         <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px]  py-[50px] at500:px-[72px] my-0 mx-auto">
           <div className="relative z-10 flex flex-col justify-center items-start w-full  ">
             <div className="flex gap-[50px] z-20 flex-col lg:flex-row justify-between items-center w-full ">
-              <div className="flex gap-[4px] flex-col justify-center items-start w-full ">
-                <h1 className="text-white text-center lg:text-left">
-                  Running Shirts Available
+              <div className="flex gap-[4px] flex-col justify-center lg:items-start w-full ">
+                <h1 className="text-white sm:text-[40px] text-center lg:text-left">
+                  {data.title1}
                 </h1>
                 <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px] text-center lg:text-left lg:max-w-[376px]">
-                  Just filling in some content till I decide what I want to fill
-                  Into this space in THE mean time lets hold on to this text.
-                  feeling like I have the masterplan you know
+                  {data.subtitle1}
                 </span>
               </div>
               <div className="flex justify-center items-center w-full ">

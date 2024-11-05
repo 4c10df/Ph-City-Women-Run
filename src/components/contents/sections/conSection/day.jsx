@@ -15,20 +15,17 @@ function DayToExplore() {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-  homepage(where: {id: "cm2lshq67068l07pnzywod0ju"}) {
+   conference(where: {id: "cm32ykaor23xh06oczo6juwh5"}) {
+    id
     
-    runner
-    registeredAthletes
-    yearsOfRunning
-    kilometersCovered
-    subtext1
-    subtext2
-    subtext3
-    subtext4
+    
+    title
+    time
     subtitle1
-    subtitle2
-    subtitle3
-    subtitle4
+    image1 {
+      url
+    }
+    
   }
 }`;
 
@@ -36,7 +33,7 @@ function DayToExplore() {
     const fetchData = async () => {
       try {
         const response = await axios.post(hygraphEndpoint, { query });
-        setData(response.data.data.homepage);
+        setData(response.data.data.conference);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -68,8 +65,7 @@ function DayToExplore() {
     <section className="relative flex flex-col justify-center items-center  bg-[#203749]   w-full overflow-hidden">
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[20px] at500:px-[72px] my-0 mx-auto">
         <h6 className=" !text-[20px] text-[#F9FBFC] leading-[24px]">
-          1 day to explore shared experiences that connect, empower, and inspire
-          women to push beyond their limits.
+          {data.subtitle1}
         </h6>
       </div>
       <div className=" absolute flex justify-end items-end bottom-[-4px]  w-full auto-container">

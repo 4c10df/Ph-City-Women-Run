@@ -37,7 +37,7 @@ function footer() {
                 <div className="flex flex-col at500:flex-row justify-end items-end w-full gap-[12px]">
                   <ul className=" flex  justify-start items-start w-full gap-[12px]">
                     <li data-aos="fade-up">
-                      <Link to="/">
+                      <Link to="/about">
                         <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
                           About
                         </span>
@@ -66,14 +66,14 @@ function footer() {
                     </li>
                   </ul>
                   <ul className=" flex  justify-start items-start w-full gap-[12px]">
-                    <li>
+                    <li data-aos="fade-up">
                       <Link to="/">
                         <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
                           Privacy Policy
                         </span>
                       </Link>
                     </li>
-                    <li>
+                    <li data-aos="fade-up">
                       <Link to="/">
                         <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
                           Legal Terms
@@ -138,14 +138,13 @@ function footer() {
             >
               <div className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">
-                  © copyrights {currentYear} PH City Women Run
+                  © {currentYear} PH City Women Run. All rights reserved.
                 </p>
               </div>
               <div className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">
-                  PH City Women Run, the logo PHCWR, and www.phcitywomenrun.com
-                  are trademarks owned by Rapids Sports and Entertainment
-                  Limited
+                  PH City Women Run, the PH City Women Run logo, PHCWR, are
+                  trademarks owned by Rapids Sports and Entertainment Limited
                 </p>
               </div>
             </div>

@@ -16,20 +16,13 @@ function Volunteer() {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-  homepage(where: {id: "cm2lshq67068l07pnzywod0ju"}) {
+  homepage(where: {id: "cm34cwbrj01z807pnjqtxzhj6"}) {
     
-    runner
-    registeredAthletes
-    yearsOfRunning
-    kilometersCovered
-    subtext1
-    subtext2
-    subtext3
-    subtext4
+    
+    
+    title1
     subtitle1
-    subtitle2
-    subtitle3
-    subtitle4
+    
   }
 }`;
 
@@ -70,17 +63,15 @@ function Volunteer() {
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[72px] my-0 mx-auto">
         <div className="flex z-20 flex-col silver:flex-row justify-between items-center w-full ">
           <div className="flex gap-[4px] flex-col justify-center items-start w-full ">
-            <h1 className="text-white">Call for Volunteers</h1>
+            <h1 className="text-white sm:text-[40px]">{data.title1}</h1>
             <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px]">
-              Just filling in some content till I decide what I want to fill
-              Into this space in THE mean time lets hold on to this text.
-              feeling like I have the masterplan you know
+              {data.subtitle1}
             </span>
           </div>
-          <div className="flex justify-center items-start w-full">
+          <div className="flex justify-start items-start w-full">
             <div
               data-aos="zoom-in"
-              className="flex pt-[20px]  justify-start w-full max-w-[206px]"
+              className="flex pt-[20px]  justify-start w-full sm:max-w-[206px]"
             >
               <Button size="play" className="!bg-[#5C176F]">
                 <span className="z-20">Become a Volunteer</span>

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { MdLocationPin } from "react-icons/md";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -11,62 +10,79 @@ import shape1 from "../../image/shapes/Frame 11686560754.png";
 import shape2 from "../../image/shapes/Frame 1686560676.png";
 
 function Notes() {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+   const [data, setData] = useState(null);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
 
-  const hygraphEndpoint =
-    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+   const hygraphEndpoint =
+     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
-  const query = `{
-  homepage(where: {id: "cm2lshq67068l07pnzywod0ju"}) {
+   const query = `{
+   conference(where: {id: "cm33r1err2kp306ocmeguyng3"}) {
     
-    runner
-    registeredAthletes
-    yearsOfRunning
-    kilometersCovered
+    title
+     title2
+     title3
+     title4
+     title5
+    
     subtext1
     subtext2
     subtext3
     subtext4
-    subtitle1
-    subtitle2
-    subtitle3
-    subtitle4
+    subtext5
+   
+    image1 {
+      url
+    }
+      image2 {
+      url
+    }
+      image3 {
+      url
+    }
+      image4 {
+      url
+    }
+      image5 {
+      url
+    }
+     
+    
   }
 }`;
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.post(hygraphEndpoint, { query });
-        setData(response.data.data.homepage);
-        setLoading(false);
-      } catch (err) {
-        setError(err);
-        setLoading(false);
-      }
-    };
+   useEffect(() => {
+     const fetchData = async () => {
+       try {
+         const response = await axios.post(hygraphEndpoint, { query });
+         setData(response.data.data.conference);
+         setLoading(false);
+       } catch (err) {
+         setError(err);
+         setLoading(false);
+       }
+     };
 
-    fetchData();
-  }, []);
+     fetchData();
+   }, []);
 
-  useEffect(() => {
-    AOS.init({ duration: 2000, once: true });
-  }, []);
+   useEffect(() => {
+     AOS.init({ duration: 2000, once: true });
+   }, []);
 
-  if (loading)
-    return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
-    );
-  if (error)
-    return (
-      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Let's get you back online
-      </p>
-    );
+   if (loading)
+     return (
+       <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
+         Loading...
+       </p>
+     );
+   if (error)
+     return (
+       <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+         Let's get you back online
+       </p>
+     );
 
   return (
     <>
@@ -74,11 +90,9 @@ function Notes() {
         <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
           <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
             <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-              <h6 className="text-white">PHCWR Conference Venue</h6>
+              <h6 className="text-white">{data.title}</h6>
               <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px] md:max-w-[350px]">
-                Keynotes showcase some of the country's most inspired thinkers
-                with powerful ideas in the ever-evolving worlds of sports,
-                technology, film, culture, and music
+                {data.subtext1}
               </span>
             </div>
             <div
@@ -86,7 +100,7 @@ function Notes() {
               className="relative flex justify-start items-start h-[282px] w-full rounded-[12px] overflow-hidden"
             >
               <LoadBlurHashImage
-                src={image2}
+                src={data.image1.url}
                 blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                 className="w-full h-auto object-cover rounded-[12px]"
                 alt="Discover Your Potential"
@@ -115,15 +129,14 @@ function Notes() {
           </div>
         </div>
       </section>
+
       <section className="relative flex flex-col justify-center items-center  bg-[#FFFFFF] py-[35px]  w-full overflow-hidden">
         <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
           <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
             <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-              <h6 className="text-[#353F50]">Presentations / Panels</h6>
+              <h6 className="text-[#353F50]">{data.title2}</h6>
               <span className="font-[84] text-[16px] text-[#4E5A6C] leading-[24px] md:max-w-[350px]">
-                Keynotes showcase some of the country's most inspired thinkers
-                with powerful ideas in the ever-evolving worlds of sports,
-                technology, film, culture, and music
+                {data.subtext2}
               </span>
             </div>
             <div
@@ -131,7 +144,7 @@ function Notes() {
               className="relative flex justify-start items-start h-[282px] w-full rounded-[12px] overflow-hidden"
             >
               <LoadBlurHashImage
-                src={image2}
+                src={data.image2.url}
                 blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                 className="w-full h-auto object-cover rounded-[12px]"
                 alt="Discover Your Potential"
@@ -160,15 +173,14 @@ function Notes() {
           </div>
         </div>
       </section>
+
       <section className="relative flex flex-col justify-center items-center  bg-[#1F2126] py-[35px]  w-full overflow-hidden">
         <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
           <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
             <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-              <h6 className="text-white">PHCWR Conference Venue</h6>
+              <h6 className="text-white">{data.title3}</h6>
               <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px] md:max-w-[350px]">
-                Keynotes showcase some of the country's most inspired thinkers
-                with powerful ideas in the ever-evolving worlds of sports,
-                technology, film, culture, and music
+                {data.subtext3}
               </span>
             </div>
             <div
@@ -176,7 +188,7 @@ function Notes() {
               className="relative flex justify-start items-start h-[282px] w-full rounded-[12px] overflow-hidden"
             >
               <LoadBlurHashImage
-                src={image2}
+                src={data.image3.url}
                 blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                 className="w-full h-auto object-cover rounded-[12px]"
                 alt="Discover Your Potential"
@@ -205,15 +217,14 @@ function Notes() {
           </div>
         </div>
       </section>
+
       <section className="relative flex flex-col justify-center items-center  bg-[#FFFFFF] py-[35px]  w-full overflow-hidden">
         <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
           <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
             <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-              <h6 className="text-[#353F50]">Presentations / Panels</h6>
+              <h6 className="text-[#353F50]">{data.title3}</h6>
               <span className="font-[84] text-[16px] text-[#4E5A6C] leading-[24px] md:max-w-[350px]">
-                Keynotes showcase some of the country's most inspired thinkers
-                with powerful ideas in the ever-evolving worlds of sports,
-                technology, film, culture, and music
+                {data.subtext4}
               </span>
             </div>
             <div
@@ -221,7 +232,7 @@ function Notes() {
               className="relative flex justify-start items-start h-[282px] w-full rounded-[12px] overflow-hidden"
             >
               <LoadBlurHashImage
-                src={image2}
+                src={data.image4.url}
                 blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
                 className="w-full h-auto object-cover rounded-[12px]"
                 alt="Discover Your Potential"
