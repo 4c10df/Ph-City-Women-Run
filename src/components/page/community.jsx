@@ -3,9 +3,9 @@ import Footer from "../contents/footer";
 import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
 import LatestNews from "../contents/sections/getNews";
-import Partnership from "../contents/sections/newsSections/partner";
 import EventNav from "../navigation/eventsNav";
-import CommunitEvents from "../contents/APIs/communitEvents";
+import EventsSection from "../contents/sections/communitySection/commSection";
+
 
 function CommunityEvents() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,8 +18,7 @@ function CommunityEvents() {
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
         <EventNav />
-              <Partnership />
-              <CommunitEvents />
+        <EventsSection/>
         <LatestNews />
         <Footer />
       </div>

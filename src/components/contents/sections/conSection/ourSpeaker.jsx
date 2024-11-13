@@ -67,7 +67,7 @@ function OurSpeakers() {
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
         <div className="flex gap-[20px] z-20 flex-col  justify-between items-center w-full ">
           <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-            <h2 className="text-[#1F2126] !text-[40px]">
+            <h2 className="text-[#1F2126] leading-[24px] sm:leading-[52px] sm:text-[40px]">
               Who will be Speaking
             </h2>
           </div>

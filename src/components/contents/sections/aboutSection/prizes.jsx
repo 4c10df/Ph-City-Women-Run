@@ -88,7 +88,7 @@ function Prize() {
 
   return (
     <>
-      <section className=" relative bg-[#1F2126] flex flex-col justify-center items-center px-[20px] sm:px-[50px] h-auto w-full ">
+      <section className=" relative bg-[#1F2126] flex flex-col justify-center items-center px-[20px] sm:px-[50px] h-auto w-full overflow-hidden">
         <div className="auto-container absolute top-[89px] flex justify-between items-center w-full overflow-hidden">
           <div className="flex relative bottom-[-301px] right-[38px] justify-start items-end h-auto w-full">
             <img src={shape2} alt="shapes" className="h-auto w-[130px]" />

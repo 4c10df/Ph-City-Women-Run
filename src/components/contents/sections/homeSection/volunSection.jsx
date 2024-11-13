@@ -61,14 +61,16 @@ function Volunteer() {
   return (
     <section className="relative flex flex-col justify-center items-center  bg-[#203749] py-[35px]  w-full overflow-hidden">
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[72px] my-0 mx-auto">
-        <div className="flex z-20 flex-col silver:flex-row justify-between items-center w-full ">
-          <div className="flex gap-[4px] flex-col justify-center items-start w-full ">
-            <h1 className="text-white sm:text-[40px]">{data.title1}</h1>
+        <div className="flex z-20 flex-col silver:flex-row justify-between items-start w-full ">
+          <div className="flex  gap-[4px] flex-col justify-start items-start w-full ">
+            <h1 className="text-white text-left md:text-[40px]">
+              {data.title1}
+            </h1>
             <span className="font-[84] text-[16px] text-[#F9FBFC] leading-[24px]">
               {data.subtitle1}
             </span>
           </div>
-          <div className="flex justify-start items-start w-full">
+          <div className="flex silver:justify-center items-start silver:items-center w-full">
             <div
               data-aos="zoom-in"
               className="flex pt-[20px]  justify-start w-full sm:max-w-[206px]"

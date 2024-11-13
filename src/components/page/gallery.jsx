@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import Footer from "../contents/footer";
 import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
-import Photos from "../contents/sections/postEvent/photo";
+import LeaderNav from "../navigation/leadNav";
+import Photos from "../contents/sections/gallery/photo";
 
 function Gallery() {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,7 +15,8 @@ function Gallery() {
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
-        <Photos />    
+        <LeaderNav />
+        <Photos />
         <Footer />
       </div>
     </>

@@ -46,7 +46,7 @@ const Navbar = ({ openOverlay }) => {
           <div className="relative w-full flex flex-col sm:flex-row justify-between items-start sm:space-x-4">
             <ul className="flex flex-col-reverse smipx:flex-row justify-start items-start smipx:space-x-4 mb-2 sm:mb-0">
               <div className="flex justify-start items-start space-x-4">
-                <li data-aos="fade-up">
+                <li >
                   <a href="https://www.facebook.com/share/15admwWdT5/">
                     <FaFacebook
                       size={19}
@@ -54,7 +54,7 @@ const Navbar = ({ openOverlay }) => {
                     />
                   </a>
                 </li>
-                <li data-aos="fade-up">
+                <li >
                   <a href="https://www.instagram.com/phcitywomenrun/profilecard/?igsh=MnFkZ3V1a2I0a3Ro">
                     <FaInstagram
                       size={19}
@@ -63,7 +63,7 @@ const Navbar = ({ openOverlay }) => {
                   </a>
                 </li>
               </div>
-              <li data-aos="fade-up">
+              <li>
                 <a href="tel:+23481012346852">
                   <span className="text-[#EDF5FD] text-[16px] leading-[24px] font-[126]">
                     + 234 810 123 46852
@@ -72,7 +72,7 @@ const Navbar = ({ openOverlay }) => {
               </li>
             </ul>
             <ul className="flex flex-col-reverse smipx:flex-row justify-start items-start space-x-4">
-              <li data-aos="fade-up">
+              <li >
                 <a href="mailto:+23481012346852">
                   <span className="text-[#EDF5FD] text-[16px] leading-[24px] font-[126]">
                     contact@phcityrun.com
@@ -80,7 +80,7 @@ const Navbar = ({ openOverlay }) => {
                 </a>
               </li>
               <div className="flex flex-col smipx:flex-row justify-start items-start smipx:space-x-4">
-                <li data-aos="fade-up">
+                <li>
                   <a href="https://www.tiktok.com/@ph.city.women.run?_t=8qrotYxit9h&_r=1">
                     <FaTiktok
                       size={19}
@@ -88,7 +88,7 @@ const Navbar = ({ openOverlay }) => {
                     />
                   </a>
                 </li>
-                <li data-aos="fade-up">
+                <li >
                   <a href="https://x.com/phcitywomenrun?t=Ot9NLKru8NzQ6IT4v8raVA&s=08">
                     <FaXTwitter
                       size={19}
@@ -176,18 +176,15 @@ const Navbar = ({ openOverlay }) => {
                   </p>
                 </li>
               </Link>
-              <Link
-                className=""
-                to="/Conference"
-                onClick={() => setActiveLink("/Conference")}
-              >
+              <Link className="" to="/conference">
                 <li
-                  onClick={closeMenu}
+                 
+                  onClick={() => setActiveLink("conference")}
                   className="py-[10px] px-[10px] capitalize w-full"
                 >
                   <p
                     className={` leading-[21.6px] text-[16px]  ${
-                      activeLink === "/Conference" ? "!font-[800]" : ""
+                      activeLink === "/conference" ? "!font-[800]" : ""
                     } ${
                       isHomePage || isTheRunPage
                         ? scrolled
@@ -203,7 +200,7 @@ const Navbar = ({ openOverlay }) => {
               <Link
                 className=""
                 to="/news"
-                onClick={() => setActiveLink("/news")}
+                onClick={() => setActiveLink("news")}
               >
                 <li
                   onClick={closeMenu}
@@ -227,7 +224,7 @@ const Navbar = ({ openOverlay }) => {
               <Link
                 className=""
                 to="/post-Events"
-                onClick={() => setActiveLink("/post-Events")}
+                onClick={() => setActiveLink("post-Events")}
               >
                 <li
                   onClick={closeMenu}
@@ -251,7 +248,7 @@ const Navbar = ({ openOverlay }) => {
               <Link
                 className=""
                 to="/volunteer"
-                onClick={() => setActiveLink("/volunteer")}
+                onClick={() => setActiveLink("volunteer")}
               >
                 <li
                   onClick={closeMenu}
@@ -344,7 +341,7 @@ const Navbar = ({ openOverlay }) => {
                     <Link
                       className="!flex !w-full"
                       to="/about"
-                      onClick={() => setActiveLink("/about")}
+                      onClick={() => setActiveLink("about")}
                     >
                       <li
                         onClick={closeMenu}
@@ -363,7 +360,7 @@ const Navbar = ({ openOverlay }) => {
                     <Link
                       className="!flex !w-full"
                       to="/Conference"
-                      onClick={() => setActiveLink("/Conference")}
+                      onClick={() => setActiveLink("Conference")}
                     >
                       <li
                         onClick={closeMenu}
@@ -399,7 +396,7 @@ const Navbar = ({ openOverlay }) => {
                     <Link
                       className="!flex !w-full"
                       to="/post-Events"
-                      onClick={() => setActiveLink("/post-Events")}
+                      onClick={() => setActiveLink("post-Events")}
                     >
                       <li
                         onClick={closeMenu}
@@ -418,7 +415,7 @@ const Navbar = ({ openOverlay }) => {
                     <Link
                       className="!flex !w-full"
                       to="/volunteer"
-                      onClick={() => setActiveLink("/volunteer")}
+                      onClick={() => setActiveLink("volunteer")}
                     >
                       <li
                         onClick={closeMenu}

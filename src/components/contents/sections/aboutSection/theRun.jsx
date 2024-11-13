@@ -11,14 +11,14 @@ import "aos/dist/aos.css";
 import Button from "../../Button";
 
 function SpecificGoal() {
-   const [data, setData] = useState(null);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-   const hygraphEndpoint =
-     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+  const hygraphEndpoint =
+    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
-   const query = `{
+  const query = `{
   theRun(where: {id: "cm2xc6ibs0mtc07pggca1ta4f"}) {
     id
     nameOfSection
@@ -31,37 +31,64 @@ function SpecificGoal() {
   }
 }`;
 
-   useEffect(() => {
-     const fetchData = async () => {
-       try {
-         const response = await axios.post(hygraphEndpoint, { query });
-         setData(response.data.data.theRun);
-         setLoading(false);
-       } catch (err) {
-         setError(err);
-         setLoading(false);
-       }
-     };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(hygraphEndpoint, { query });
+        setData(response.data.data.theRun);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
 
-     fetchData();
-   }, []);
+    fetchData();
+  }, []);
 
-   useEffect(() => {
-     AOS.init({ duration: 2000, once: true });
-   }, []);
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
 
-   if (loading)
-     return (
-       <p className="h-[20vh] w-full bg-slate-500 flex justify-center items-center leading-tight text-[20px] text-white">
-         Loading...
-       </p>
-     );
-   if (error)
-     return (
-       <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
-         Let's get you back online
-       </p>
-     );
+  if (loading)
+    return (
+      <p className="h-[20vh] w-full bg-slate-500 flex justify-center items-center leading-tight text-[20px] text-white">
+        Loading...
+      </p>
+    );
+  if (error)
+    return (
+      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+        Let's get you back online
+      </p>
+    );
+ const formatDate = (dateString) => {
+   const date = new Date(dateString);
+   const dayOfWeek = date.toLocaleString("default", { weekday: "long" }); // Get day in words
+   const dayOfMonth = date.getDate(); // Get numeric day of the month
+   const month = date.toLocaleString("default", { month: "long" });
+   const year = date.getFullYear();
+
+   // Determine the correct suffix for the day
+   const getDaySuffix = (day) => {
+     if (day > 3 && day < 21) return "th";
+     switch (day % 10) {
+       case 1:
+         return "st";
+       case 2:
+         return "nd";
+       case 3:
+         return "rd";
+       default:
+         return "th";
+     }
+   };
+
+   return `${dayOfWeek}, ${dayOfMonth}${getDaySuffix(
+     dayOfMonth
+   )} ${month} ${year}`;
+ };
+
 
   return (
     <>
@@ -75,26 +102,28 @@ function SpecificGoal() {
           backgroundPosition: "center",
         }}
       >
-        <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[110px] at500:px-[72px] my-0 mx-auto">
-          <div className="flex justify-center  px-[20px] sm:px-[50px]  md:px-[40px] w-full max-w-[1121px] ">
-            <div className="custom-blur-shadow flex gap-[20px] flex-col rounded-[24px] justify-between items-start silver:items-center w-full  py-[100px] px-[20px] sm:px-[50px] md:pl-[70px] md:pr-[40px] overflow-hidden">
+        <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[110px] sm:px-[72px] my-0 mx-auto">
+          <div className="flex justify-center    md:px-[40px] w-full max-w-[1121px] ">
+            <div className="custom-blur-shadow flex gap-[20px] flex-col rounded-[24px] justify-between items-center w-full py-[30px] at500:py-[100px] px-[10px] md:px-[40px] overflow-hidden">
               <div className="flex flex-col justify-center items-center silver:w-[716px]">
                 <h2 className="text-[#FFFFFF] !text-[40px]">
                   {data.nameOfSection}
                 </h2>
               </div>
-
-              <div className="bg-white rounded-[12px] px-[24px] py-[12px] max-w-[493px]">
-                <ul className="flex gap-[20px] flex-col at500:flex-row">
-                  <li className="flex gap-[10px] justify-center items-center">
+              <span className="text-[16px] font-[106] text-center text-[#ffff] leading-[19.84px] max-w-[716px]">
+                {data.subtext3}
+              </span>
+              <div className="bg-white flex justify-center items-center rounded-[12px] px-[15px] sm:px-[24px] py-[12px] w-full max-w-[493px]">
+                <ul className="flex gap-[20px] flex-col sm:flex-row  justify-between w-full">
+                  <li className="flex flex-col sm:flex-row  gap-[10px] justify-center items-center">
                     <FaRegCalendar className="text-[#5C176F]" size={24} />
-                    <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
-                      {data.date}
+                    <span className="text-[#5C176F] text-[16px] text-center leading-[24px] font-bold">
+                      {formatDate(data.date)}
                     </span>
                   </li>
-                  <li className="flex gap-[10px] justify-center items-center">
+                  <li className="flex flex-col sm:flex-row  gap-[10px] justify-center items-center">
                     <img className="w-[24px] h-auto" src={location} alt="" />
-                    <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
+                    <span className="text-[#5C176F] text-[16px] text-center leading-[24px] font-bold">
                       {data.runType}
                     </span>
                   </li>

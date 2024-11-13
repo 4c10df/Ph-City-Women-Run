@@ -80,10 +80,10 @@ function Rules() {
               {data.subtext3}
             </span>
           </div>
-          <div className="flex justify-center items-start w-full">
+          <div className="flex justify-start silver:justify-center items-start w-full">
             <div
               data-aos="zoom-in"
-              className="flex pt-[20px] justify-start w-full max-w-[206px]"
+              className="flex pt-[20px] justify-start w-full sm:max-w-[206px]"
             >
               <Button
                 size="play"

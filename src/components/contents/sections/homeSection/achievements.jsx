@@ -6,7 +6,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { FaRunning } from "react-icons/fa";
 import { FaRoad, FaRuler } from "react-icons/fa";
-import { GiPathDistance } from "react-icons/gi";
+import { GiPathDistance, GiVideoConference } from "react-icons/gi";
 
 function AchievementsSection() {
   const [data, setData] = useState(null);
@@ -31,10 +31,10 @@ function AchievementsSection() {
   const query = `{
   homepage(where: {id: "cm2lshq67068l07pnzywod0ju"}) {
     
-    runner
-    registeredAthletes
-    yearsOfRunning
-    kilometersCovered
+    runningEvents
+    conference11
+    days
+    runners
     subtext1
     subtext2
     subtext3
@@ -89,7 +89,7 @@ function AchievementsSection() {
             <div className="counter" ref={nairaRef}>
               {nairaInView && (
                 <CountUp
-                  end={data.runner}
+                  end={data.runningEvents}
                   suffix={data.subtext1}
                   duration={3}
                 />
@@ -100,7 +100,7 @@ function AchievementsSection() {
 
           <div className="flex flex-col justify-center items-center gap-[8px]  w-full">
             <span>
-              <FaRuler size={50} className="text-white" />
+              <GiVideoConference size={50} className="text-white" />
               {/* <img
                 src={icon2}
                 className="w-[46px] h-auto object-cover"
@@ -110,7 +110,7 @@ function AchievementsSection() {
             <div className="counter" ref={tripsRef}>
               {tripsInView && (
                 <CountUp
-                  end={data.yearsOfRunning}
+                  end={data.conference11}
                   suffix={data.subtext2}
                   duration={3}
                 />
@@ -130,11 +130,7 @@ function AchievementsSection() {
             </span>
             <div className="counter" ref={consultantsRef}>
               {consultantsInView && (
-                <CountUp
-                  end={data.kilometersCovered}
-                  suffix={data.subtext3}
-                  duration={3}
-                />
+                <CountUp end={data.days} suffix={data.subtext3} duration={3} />
               )}
             </div>
             <span className="txt3 capitalize">{data.subtitle3}</span>
@@ -152,7 +148,7 @@ function AchievementsSection() {
             <div className="counter" ref={clientsRef}>
               {clientsInView && (
                 <CountUp
-                  end={data.registeredAthletes}
+                  end={data.runners}
                   suffix={data.subtext4}
                   duration={3}
                 />

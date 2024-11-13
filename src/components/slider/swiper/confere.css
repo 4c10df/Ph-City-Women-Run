@@ -15,8 +15,8 @@
 
 .swiper-button-prev-blog,
 .swiper-button-next-blog {
-    position: relative;
-    top: var(--swiper-navigation-top-offset, 50%);
+    position: absolute;
+    top: var(--swiper-navigation-top-offset, 45%);
     height: 40px;
     width: 40px;
     margin-top: calc(0px - (var(--swiper-navigation-size) / 2));

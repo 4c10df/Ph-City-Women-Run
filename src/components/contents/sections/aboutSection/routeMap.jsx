@@ -16,7 +16,7 @@ function RouteMap() {
   theRun(where: {id: "cm2xc6ibs0mtc07pggca1ta4f"}) {
     id
     nameOfSection
-    mapLink
+    
   }
 }`;
 

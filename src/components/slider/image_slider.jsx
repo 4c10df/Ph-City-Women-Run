@@ -132,7 +132,7 @@ const ImageSlider = () => {
             className="each-fade flex flex-col justify-center items-center !w-full "
           >
             <div
-              className="image-container  w-full h-screen"
+              className="image-container  !w-full h-screen"
               style={{
                 backgroundImage: `url(${slide.image})`,
                 backgroundColor: "#000000BF",
@@ -156,7 +156,7 @@ const ImageSlider = () => {
             <div className="auto-container absolute top-[45%]  flex justify-start items-start w-full  pr-[30px] sm:pr-0">
               {slide.title && (
                 <div>
-                  <div className=" bg-[#8D12AB] flex flex-col  justify-start items-start w-full max-w-[641px] py-[24px]">
+                  <div className=" bg-[#8D12AB] flex flex-col  justify-start items-start w-full py-[24px] max-w-[641px] ">
                     <div className="auto-container flex flex-col justify-start items-start w-full  px-[30px]  at500:px-[48px] md:pl-[90px] my-0 mx-auto h-auto">
                       <h1
                         className="font-Geist text-left uppercase text-[#FFFFFF] text-[20px] !leading-[24px] sm:!leading-[52px] sm:!text-[35px]  "
@@ -185,7 +185,7 @@ const ImageSlider = () => {
               )}
               {slide.title1 && (
                 <div>
-                  <div className=" bg-[#8D12AB] flex flex-col  justify-start items-start w-full max-w-[641px] py-[24px]">
+                  <div className=" bg-[#8D12AB] flex flex-col  justify-start items-start w-full  py-[24px]">
                     <div className="auto-container flex flex-col justify-start items-start w-full  px-[30px]  at500:px-[48px] md:pl-[90px] my-0 mx-auto h-auto">
                       <h1
                         className="font-Geist text-left uppercase text-[#FFFFFF] text-[20px] !leading-[24px] sm:!leading-[52px] sm:!text-[35px]  "

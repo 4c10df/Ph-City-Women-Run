@@ -79,7 +79,9 @@ function HeroSection() {
             }}
           >
             <div className="relative flex gap-[40px] flex-col justify-start items-start w-full  h-auto sm:h-[320px] md:w-[456px]">
-              <h4 className="text-white !font-[800] ">{data.title}</h4>
+              <h4 className="text-white !font-[800] leading-[24px] sm:leading-[52px] sm:text-[40px]">
+                {data.title}
+              </h4>
               <div className="flex flex-col gap-[8px] justify-center items-start bg-white max-w-[163px] rounded-[12px] py-[12px] px-[24px]">
                 <div className="flex gap-[10px] justify-center items-center">
                   <BsAlarm size={24} className="text-[#5C176F]" />

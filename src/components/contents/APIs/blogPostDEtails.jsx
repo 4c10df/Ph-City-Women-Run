@@ -125,19 +125,21 @@ const BlogPostDetails = () => {
     <section className="relative bg-white flex justify-center items-center w-full h-auto overflow-hidden">
       <BackNav />
       <div className="relative flex flex-col justify-center items-center w-full">
-        <div className="static flex flex-col justify-center items-center w-full max-w-[1208px] px-[15px] pt-[230px] pb-[30px] at500:px-[72px] my-0 mx-auto">
+        <div className="static flex flex-col justify-center items-center w-full auto-container px-[15px] pt-[250px] pb-[30px] at500:px-[72px] my-0 mx-auto">
           <div className="flex flex-col w-full">
             <div className="flex gap-[16px] flex-col justify-start items-start w-full mb-[30px]">
-              <h1>{post?.title}</h1>
-              <span className="text-[#7E8EA2] txt w-[400px]">
+              <h4 className="text-[#2E2E2E] !font-bold leading-[24px] sm:leading-[52px] sm:text-[40px]">
+                {post?.title}
+              </h4>
+              <span className="text-[#7E8EA2] txt w-[600px]">
                 {post.excerpt}
               </span>
             </div>
-            <div className="static flex flex-col justify-center items-center w-full mb-[30px]">
+            <div className="relative flex flex-col justify-center items-center w-full mb-[30px]">
               <div className="flex flex-col gap-[50px] ipx:flex-row justify-start items-start silver:justify-between w-full">
                 <div className="flex flex-col gap-[20px] lg:flex-row justify-start items-start sm:justify-between w-[300px]">
-                  <div className="flex flex-col gap-[12px]">
-                    <span
+                  {/* <div className="flex flex-col gap-[12px]">
+                    <span  
                       data-aos="fade-up"
                       className="txt4 leading-[28px] text-[#353F50]"
                     >
@@ -147,7 +149,7 @@ const BlogPostDetails = () => {
                       data-aos="fade-up"
                       className="txt4 leading-[28px] text-[#667085]"
                     ></span>
-                  </div>
+                  </div> */}
                   <div className="flex flex-col gap-[12px]">
                     <span
                       data-aos="fade-up"
@@ -212,14 +214,14 @@ const BlogPostDetails = () => {
             backgroundImage: `url(${post.coverImage.url})`,
           }}
         ></div>
-        <div className="static flex flex-col justify-center items-center w-full  max-w-[1208px] px-[15px] py-[100px] at500:px-[72px] my-0 mx-auto">
+        <div className="static flex flex-col justify-center items-center w-full  auto-container px-[15px] py-[100px] at500:px-[72px] my-0 mx-auto">
           <div
             className="flex flex-col gap-[30px] "
             dangerouslySetInnerHTML={{ __html: post.content.html }}
           />
         </div>
         <div className="relative flex flex-col justify-center items-center w-full">
-          <div className="static flex gap-[30px] flex-col justify-center items-center w-full  max-w-[1280px] px-[15px] py-[100px] at500:px-[72px] my-0 mx-auto">
+          <div className="static flex gap-[30px] flex-col justify-center items-center w-full  auto-container px-[15px] py-[70px] at500:px-[72px] my-0 mx-auto">
             <div className="flex flex-col w-full  ">
               <div className="flex sm:justify-end items-end w-full mb-[20px]">
                 <ul className="flex gap-4">

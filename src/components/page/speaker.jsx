@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Footer from "../contents/footer";
 import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
-import Photos from "../contents/sections/postEvent/photo";
+import Photos from "../contents/sections/gallery/photo";
 import ConferenecNav from "../navigation/conNav";
 import SpeakerHeroSection from "../contents/sections/conSection/speakerHero";
 import OurSpeakers from "../contents/sections/conSection/ourSpeaker";

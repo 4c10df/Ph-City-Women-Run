@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Blogs from "../../APIs/blogs";
+import Blogs from "../../APIs/newsBlog";
 
 // import Link from "./link";
 

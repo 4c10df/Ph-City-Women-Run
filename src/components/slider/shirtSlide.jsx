@@ -87,7 +87,7 @@ const ShirtSlider = () => {
                 data-aos="flip-left"
                 className="flex  bg-white gap-[15px] flex-col justify-center items-center w-full overflow-hidden"
               >
-                <div className="relative flex justify-center items-center">
+                <div className="relative py-[20px] flex justify-center items-center">
                   {shop.productImage && (
                     <LoadBlurHashImage
                       src={shop.productImage.url}

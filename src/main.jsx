@@ -17,6 +17,7 @@ import Speaker from "./components/page/speaker";
 import Schedule from "./components/page/schedule";
 import Partners from "./components/page/partners";
 import Volunteer from "./components/page/volunteer";
+import PhotosDetails from "./components/page/galleryDetail";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -142,6 +143,18 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "/photos/:slug",
+    element: (
+      <>
+        <Helmet>
+          <title>photos Rankings</title>
+          <meta name="description" content="Check ." />
+        </Helmet>
+        <PhotosDetails />
+      </>
+    ),
+  },
+  {
     path: "speaker",
     element: (
       <>
@@ -202,15 +215,12 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "board",
+    path: "/leaderBoards/:slug",
     element: (
       <>
         <Helmet>
-          <title>Leaderboard - Travel Industry</title>
-          <meta
-            name="description"
-            content="Check out the leaderboard for top travel consolidators and professionals in the industry."
-          />
+          <title>Leaderboard Rankings</title>
+          <meta name="description" content="Check ." />
         </Helmet>
         <LeaderBoard />
       </>

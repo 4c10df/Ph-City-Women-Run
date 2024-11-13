@@ -58,7 +58,7 @@ function Thecount() {
       className="relative flex flex-col justify-center items-center bg-fixed bg-cover bg-blend-multiply bg-[#00000033] silver:h-[243px] w-full"
       style={{
         backgroundImage: `url(${imageTwo})`,
-        // backgroundColor: "#00000033",
+        backgroundColor: "#000000BF",
         backgroundBlendMode: "multiply",
         backgroundSize: "cover",
         backgroundPosition: "center",

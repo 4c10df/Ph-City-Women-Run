@@ -5,30 +5,29 @@ import "@fontsource/geist-sans";
 
 const ConferenecNav = () => {
   const { pathname } = useLocation();
-    const [activeLink, setActiveLink] = useState("");
-     const [scrolled, setScrolled] = useState(false);
-     const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [activeLink, setActiveLink] = useState("");
+  const [scrolled, setScrolled] = useState(false);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-   const isConferencePage = pathname === "/conference";
-    
+  const isConferencePage = pathname === "/conference";
 
-     useEffect(() => {
-       const handleScroll = () => {
-         setScrolled(window.scrollY > 0);
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
 
-         if (window.scrollY > lastScrollY) {
-           setIsScrollingUp(false); // Scrolling down
-         } else {
-           setIsScrollingUp(true); // Scrolling up
-         }
-         setLastScrollY(window.scrollY);
-       };
+      if (window.scrollY > lastScrollY) {
+        setIsScrollingUp(false); // Scrolling down
+      } else {
+        setIsScrollingUp(true); // Scrolling up
+      }
+      setLastScrollY(window.scrollY);
+    };
 
-       window.addEventListener("scroll", handleScroll);
-       return () => {
-         window.removeEventListener("scroll", handleScroll);
-       };
-     }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   useEffect(() => {
     const currentPage = pathname === "/" ? "/" : pathname.substring(1);
@@ -49,51 +48,69 @@ const ConferenecNav = () => {
             <Link className="flex w-full" to="/conference">
               <li
                 className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px] 
-                 ${
-                   isConferencePage
-                     ? " border-b-[4px] border-b-[#FEEBFD]"
-                     : "!border-b-[0px] !border-none"
-                 }`}
+                `}
               >
-                <span>Conference</span>
+                <span
+                  className={` ${
+                    activeLink === "conference"
+                      ? "!font-[600] border-b-[4px] border-b-[#FEEBFD]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("conference")}
+                >
+                  Conference
+                </span>
               </li>
             </Link>
             <Link className="flex w-full" to="/speaker">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]  ${
-                  activeLink === "speaker"
-                    ? "border-b-[4px] border-b-[#FEEBFD]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("speaker")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]`}
               >
-                <span>Speakers</span>
+                <span
+                  className={` ${
+                    activeLink === "speaker"
+                      ? "!font-[600] border-b-[4px] border-b-[#FEEBFD]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("speaker")}
+                >
+                  Speakers
+                </span>
               </li>
             </Link>
           </ul>
           <ul className="flex justify-start items-start space-x-4">
             <Link className="flex w-full" to="/schedule">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]  ${
-                  activeLink === "schedule"
-                    ? "border-b-[4px] border-b-[#FEEBFD]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("schedule")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px] `}
               >
-                <span>Schedule</span>
+                <span
+                  className={` ${
+                    activeLink === "schedule"
+                      ? "!font-[600] border-b-[4px] border-b-[#FEEBFD]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("schedule")}
+                >
+                  Schedule
+                </span>
               </li>
             </Link>
             <Link className="flex w-full" to="/partners">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px] ${
-                  activeLink === "partners"
-                    ? "border-b-[4px] border-b-[#FEEBFD]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("partners")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]`}
+               
               >
-                <span>Partners</span>
+                <span
+                  className={` ${
+                    activeLink === "partners"
+                      ? "!font-[600] border-b-[4px] border-b-[#FEEBFD]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("partners")}
+                >
+                  Partners
+                </span>
               </li>
             </Link>
           </ul>

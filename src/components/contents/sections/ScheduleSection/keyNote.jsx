@@ -134,7 +134,9 @@ function Notes() {
         <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[10px] at500:px-[40px] md:px-[72px] my-0 mx-auto">
           <div className="flex gap-[30px] z-20 flex-col silver:flex-row justify-between items-center w-full ">
             <div className="flex gap-[10px] flex-col justify-center items-start w-full ">
-              <h6 className="text-[#353F50]">{data.title2}</h6>
+              <h6 className="text-[#353F50] leading-[24px] sm:leading-[52px] sm:text-[40px]">
+                {data.title2}
+              </h6>
               <span className="font-[84] text-[16px] text-[#4E5A6C] leading-[24px] md:max-w-[350px]">
                 {data.subtext2}
               </span>

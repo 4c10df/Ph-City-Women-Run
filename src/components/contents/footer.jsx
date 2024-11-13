@@ -1,19 +1,20 @@
 import React from "react";
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTiktok,
-} from "react-icons/fa";
+import { useEffect } from "react";
+import { FaFacebook, FaInstagram, FaYoutube, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import logo from "../navigation/logos/9ab71b9b81bed1d6a8cf79dfc1eb4cce.png";
 import Link from "./link";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 import "../contents/styles/_footer.css";
 
 const currentYear = new Date().getFullYear();
 
 function footer() {
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
+
   return (
     <footer
       id="down"

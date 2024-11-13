@@ -4,10 +4,11 @@ import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
 import TheRun from "../contents/sections/aboutSection/theRun";
 import Race from "../contents/sections/aboutSection/raceInfo";
+import Race2 from "../contents/sections/aboutSection/raceInfo2";
 import Prizes from "../contents/sections/aboutSection/prizes";
 import Rules from "../contents/sections/aboutSection/rules";
 import RouteMap from "../contents/sections/aboutSection/routeMap";
-
+import PageTitle from "../pageTitle/pageTitle"
 
 function AboutUs() {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,11 +17,18 @@ function AboutUs() {
 
   return (
     <>
+      <PageTitle
+        title="My Page Title"
+        description="This is a description of the page."
+        keywords="the run"
+      />  
+      ;
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
         <TheRun />
         <Race />
+        <Race2 />
         <Prizes />
         <Rules />
         <RouteMap />

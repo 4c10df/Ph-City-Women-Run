@@ -78,21 +78,7 @@ background: linear-gradient(160.22deg, rgba(255, 255, 255, 0.4) 5.08%, rgba(255,
 }
 
 .gradient-border1 {
-  border: 1px solid transparent;
-  /* Transparent base for gradient border */
-  border-image-source: linear-gradient(155.24deg,
-      rgba(239, 232, 205, 0.2) -1.19%,
-      rgba(242, 241, 225, 0.2) 34.8%,
-      rgba(161, 40, 71, 0.2) 76.79%,
-      rgba(37, 83, 128, 0.2) 105.1%);
-  border-image-slice: 1;
-  /* Apply gradient along the border */
-  box-shadow: 0px 4px 24px -1px rgba(255, 255, 255, 0.25);
-  /* White shadow with transparency */
-  backdrop-filter: blur(60px);
-  /* Blurs the background behind the element */
-  background: #A822AF;
-  /* Solid background color */
+  background: linear-gradient(87.55deg, #79BCF1 -2%, #1864A0 112.18%);
 }
 nav ul li  {
   font-size: 16px;
@@ -127,13 +113,13 @@ h1 {
 
 h2 {
   font-weight: 800;
-  font-size: 40px;
+  font-size: 20px;
   line-height: 52px;
   font-family: 'Geist Sans', sans-serif;
 }
 
 h3 {
-  font-size: 40px;
+  font-size: 20px;
   line-height: 48px;
   font-weight: 175;
   letter-spacing: -2%;
@@ -141,14 +127,14 @@ h3 {
 }
 
 h4 {
-  font-size: 40px;
+  font-size: 20px;
   line-height: 52px;
   font-weight: 176;
   font-family: 'Geist Sans', sans-serif;
 }
 
 h5 {
-  font-size: 32px;
+  font-size: 20px;
   line-height: 32px;
   font-weight: 800;
   font-family: 'Geist Sans', sans-serif;

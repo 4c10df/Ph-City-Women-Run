@@ -23,24 +23,14 @@ function CommunitEvents() {
           <div className="flex flex-col justify-center items-start w-full gap-[40px] ">
             <div
               data-aos="fade-right"
-              data-aos-duration="1000"
+              data-aos-delay="1000"
+              data-aos-duration="60000"
+              data-aos-easing="ease-in-out"
               className="flex bg-[#8C12AB] p-4 flex-col justify-center items-start rounded-r-[8px]"
             >
               <h2 className="text-white !leading-[24px] sm:!leading-[52px] !text-[20px] sm:!text-[40px]">
                 NEWS & COMMUNITY EVENTS
               </h2>
-              {/* <span
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                className="text-[#7E8EA2] text-[16px] leading-[24px] font-[84] md:w-[998px]"
-              >
-                Just filling in some content till I decide what I want to fill
-                Into this space in THE mean time lets hold on to this text.
-                feeling like I have the masterplan you know. Just filling in
-                some content till I decide what I want to fill Into this space
-                in THE mean time lets hold on to this text. feeling like I have
-                the masterplan you know
-              </span> */}
             </div>
             <LatestBlogs />
 

@@ -75,7 +75,9 @@ function SpeakerHeroSection() {
             }}
           >
             <div className="relative flex gap-[10px] flex-col justify-start items-start h-auto sm:h-[320px]  w-full md:w-[456px]">
-              <h4 className="text-white !font-[800] ">{data.title}</h4>
+              <h4 className="text-white !font-[800] leading-[24px] sm:leading-[52px] sm:text-[40px]">
+                {data.title}
+              </h4>
               <span className="font-[84] text-[#E1E6ED] text-[16px] leading-[24px]">
                 {data.subtitle1}
               </span>

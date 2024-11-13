@@ -44,28 +44,36 @@ const EventNav = () => {
       <div className="relative flex justify-center items-center w-full 2xl:w-[1280px] px-[15px] py-[16px] at500:px-[72px] sm:px-[120px] mx-auto">
         <div className="relative w-full flex flex-col at500:flex-row justify-start items-start at500:space-x-4">
           <ul className="flex justify-start items-start space-x-4">
-            <Link className="flex w-full" to="/news">
+            <Link className="flex w-full" to="/post-Events">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]  ${
-                  activeLink === "news"
-                    ? "border-b-[4px] border-b-[#8D12AB]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("news")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]`}
               >
-                <span>Leader Boards</span>
+                <span
+                  className={`font-normal text-[14px] leading-[20px] ${
+                    activeLink === "post-Events"
+                      ? "!font-[600] border-b-[4px] border-b-[#8D12AB]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("post-Events")}
+                >
+                  Leader Boards
+                </span>
               </li>
             </Link>
             <Link className="flex w-full" to="/gallery">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]  ${
-                  activeLink === "gallery"
-                    ? "border-b-[4px] border-b-[#8D12AB]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("gallery")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]`}
               >
-                <span>Gallery</span>
+                <span
+                  className={`font-normal text-[14px] leading-[20px] ${
+                    activeLink === "gallery"
+                      ? "!font-[600] border-b-[4px] border-b-[#8D12AB]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("gallery")}
+                >
+                  Gallery
+                </span>
               </li>
             </Link>
           </ul>

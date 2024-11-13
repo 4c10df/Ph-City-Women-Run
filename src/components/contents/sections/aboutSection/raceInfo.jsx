@@ -88,7 +88,7 @@ function RaceInfo() {
 
   return (
     <>
-      <section className="relative  bg-[#F9FBFC] flex flex-col justify-center items-center w-full h-auto ">
+      <section className="relative  bg-[#F9FBFC] flex flex-col justify-center items-center w-full h-auto overflow-hidden">
         <div className=" absolute z-[1] top-[345px] flex justify-start items-start w-full auto-container">
           <img
             className="relative flex left-[-87px] h-auto w-[499px] opacity-[30%] object-contain"
@@ -101,16 +101,16 @@ function RaceInfo() {
         </div>
         <div className="static z-20 auto-container flex flex-col justify-center items-center w-full px-[15px] py-[20px] at500:px-[40px] md:px-[72px] silver:pl-[72px] silver:pr-0 my-0 mx-auto">
           <div className="flex gap-[40px] flex-col justify-center items-start w-full mb-[50px]">
-            <h2 className="text-[#111E2F] !text-[40px] ">
+            <h2 className="text-[#111E2F] !text-[30px] !leading-[24px] sm:!leading-[54px] sm:text-[40px]">
               {data.nameOfSection}
             </h2>
             <div className="flex gap-[30px] flex-col silver:flex-row justify-between items-start w-full">
               <div className="flex flex-col justify-center items-start w-full max-w-[527px]">
-                <h4 className="!text-[40px] !font-bold text-[#5C176F] !leading-[54px]">
+                <h4 className="!text-[25px] !font-bold text-[#5C176F] !leading-[24px] sm:!leading-[54px] sm:text-[40px] ">
                   {data.raceInfo}
                 </h4>
-                <span className="text-[16px] font-[106] text-[#5C176F] leading-[19.84px] max-w-[357px]">
-                  {data.raceInfo}
+                <span className="text-[16px] font-[106] text-[#4E5A6C] leading-[19.84px] max-w-[357px]">
+                  {data.subtext5}
                 </span>
               </div>
               <div className="flex justify-center items-start w-full max-w-[643px]">
@@ -234,7 +234,7 @@ function RaceInfo() {
                 </li>
               </ul>
 
-              <div className="flex gap-[24px] justify-between items-center w-full max-w-[426px]">
+              <div className="flex flex-col at500:flex-row gap-[24px] justify-between items-center w-full max-w-[426px]">
                 <div className="flex justify-start w-full at500:w-[201px]">
                   <Button size="large" className="  !text-[#121F30]">
                     Preorder Shirts

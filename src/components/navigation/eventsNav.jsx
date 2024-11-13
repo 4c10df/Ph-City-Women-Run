@@ -46,26 +46,34 @@ const EventNav = () => {
           <ul className="flex justify-start items-start space-x-4">
             <Link className="flex w-full" to="/news">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]  ${
-                  activeLink === "news"
-                    ? "border-b-[4px] border-b-[#8D12AB]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("news")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]`}
               >
-                <span>news</span>
+                <span
+                  className={` font-normal text-[14px] leading-[20px] ${
+                    activeLink === "news"
+                      ? "!font-[600] border-b-[4px] border-b-[#8D12AB]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("news")}
+                >
+                  news
+                </span>
               </li>
             </Link>
             <Link className="flex w-full" to="/community">
               <li
-                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px]  ${
-                  activeLink === "community"
-                    ? "border-b-[4px] border-b-[#8D12AB]"
-                    : ""
-                }`}
-                onClick={() => setActiveLink("community")}
+                className={`relative flex gap-[10px] capitalize items-center text-[#353F50] py-[10px] `}
               >
-                <span>Community Events</span>
+                <span
+                  className={` font-normal text-[14px] leading-[20px] ${
+                    activeLink === "community"
+                      ? "!font-[600] border-b-[4px] border-b-[#8D12AB]"
+                      : ""
+                  }`}
+                  onClick={() => setActiveLink("community")}
+                >
+                  Community Events
+                </span>
               </li>
             </Link>
           </ul>
