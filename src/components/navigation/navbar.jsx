@@ -46,7 +46,7 @@ const Navbar = ({ openOverlay }) => {
           <div className="relative w-full flex flex-col sm:flex-row justify-between items-start sm:space-x-4">
             <ul className="flex flex-col-reverse smipx:flex-row justify-start items-start smipx:space-x-4 mb-2 sm:mb-0">
               <div className="flex justify-start items-start space-x-4">
-                <li >
+                <li>
                   <a href="https://www.facebook.com/share/15admwWdT5/">
                     <FaFacebook
                       size={19}
@@ -54,7 +54,7 @@ const Navbar = ({ openOverlay }) => {
                     />
                   </a>
                 </li>
-                <li >
+                <li>
                   <a href="https://www.instagram.com/phcitywomenrun/profilecard/?igsh=MnFkZ3V1a2I0a3Ro">
                     <FaInstagram
                       size={19}
@@ -72,10 +72,10 @@ const Navbar = ({ openOverlay }) => {
               </li>
             </ul>
             <ul className="flex flex-col-reverse smipx:flex-row justify-start items-start space-x-4">
-              <li >
-                <a href="mailto:+23481012346852">
+              <li>
+                <a href="mailto:phcitywomenrun@gmail.com">
                   <span className="text-[#EDF5FD] text-[16px] leading-[24px] font-[126]">
-                    contact@phcityrun.com
+                    phcitywomenrun@gmail.com
                   </span>
                 </a>
               </li>
@@ -88,7 +88,7 @@ const Navbar = ({ openOverlay }) => {
                     />
                   </a>
                 </li>
-                <li >
+                <li>
                   <a href="https://x.com/phcitywomenrun?t=Ot9NLKru8NzQ6IT4v8raVA&s=08">
                     <FaXTwitter
                       size={19}
@@ -178,7 +178,6 @@ const Navbar = ({ openOverlay }) => {
               </Link>
               <Link className="" to="/conference">
                 <li
-                 
                   onClick={() => setActiveLink("conference")}
                   className="py-[10px] px-[10px] capitalize w-full"
                 >

@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import Footer from "../contents/footer";
 import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
-import ContactHeroSection from "../contents/sections/contactUs_Section/contactHeroSection";
-import ContactInFo from "../contents/sections/contactUs_Section/contactInFo";
+import VolunNav from "../navigation/volNav";
+import Volundepartment from "../contents/sections/volunteerSection/departmentHero";
+import Department from "../contents/sections/volunteerSection/department";
 
-function ContactUs() {
+function VolunteerDepartment() {
   const [isOpen, setIsOpen] = useState(false);
   const openOverlay = () => setIsOpen(true);
   const closeOverlay = () => setIsOpen(false);
@@ -15,8 +16,9 @@ function ContactUs() {
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
-        <ContactHeroSection />
-        <ContactInFo/>
+        <VolunNav />
+        <Volundepartment />
+        <Department />
 
         <Footer />
       </div>
@@ -24,4 +26,4 @@ function ContactUs() {
   );
 }
 
-export default ContactUs;
+export default VolunteerDepartment;

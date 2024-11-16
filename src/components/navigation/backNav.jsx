@@ -7,11 +7,12 @@ import "@fontsource/geist-sans";
 const BackNav = () => {
   const { pathname } = useLocation();
   const [activeLink, setActiveLink] = useState("");
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(true);
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const isAnyPage = pathname.includes("/posts/");
   const isleaderBoardPage = pathname.includes("/leaderBoards/");
+  const isdepartmentPage = pathname.includes("/departments/");
   const isPhotoDetailsPage = pathname.includes("/photos/");
 
   useEffect(() => {
@@ -39,10 +40,14 @@ const BackNav = () => {
 
   return (
     <nav
-      className={`fixed top-[156px] z-[99] bg-[#F9FBFC] flex justify-center items-center at500:h-[64px] w-full ${
-        isScrollingUp
-          ? "translate-y-0 transition-all duration-500 ease-out"
-          : "-translate-y-full"
+      className={`fixed top-[156px] z-[99] flex justify-center items-center at500:h-[64px] w-full ${
+        isScrollingUp ? "translate-y-0" : "-translate-y-full"
+      } ${
+        isdepartmentPage && scrolled
+          ? "bg-[#F9FBFC]"
+          : isdepartmentPage
+          ? ""
+          : "bg-[#F9FBFC]"
       }`}
     >
       <div className="relative flex justify-center items-center w-full auto-container px-[15px] py-[16px] at500:px-[72px] sm:px-[120px] mx-auto">
@@ -76,7 +81,26 @@ const BackNav = () => {
                 </span>
               </li>
             </Link>
-
+            <Link className="flex w-full " to="/department">
+              <li
+                className={`relative group flex gap-[10px] capitalize items-center text-white py-[10px] pr-[10px] ${
+                  activeLink === "department"
+                    ? "border-b-[4px] border-b-[#8D12AB]"
+                    : ""
+                }  ${
+                  isdepartmentPage && scrolled
+                    ? "!text-[#05284C]"
+                    : isdepartmentPage
+                    ? ""
+                    : "hidden"
+                } `}
+              >
+                <FaArrowLeft className=" relative top-0  group-hover:text-[#8D12AB] w-[20px]" />
+                <span className="  font-normal text-[14px] leading-[20px] group-hover:text-[#8D12AB]">
+                  Back to Volunteer Departments
+                </span>
+              </li>
+            </Link>
             <Link className="flex w-full " to="/gallery">
               <li
                 className={`relative group flex gap-[10px] capitalize items-center text-[#05284C] py-[10px] pr-[10px]  ${
@@ -90,7 +114,7 @@ const BackNav = () => {
               </li>
             </Link>
           </ul>
-          
+
           <ul className="flex justify-end items-center ">
             <Link className="flex w-full " to="/gallery">
               <li

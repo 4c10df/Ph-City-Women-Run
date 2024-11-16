@@ -18,6 +18,10 @@ import Schedule from "./components/page/schedule";
 import Partners from "./components/page/partners";
 import Volunteer from "./components/page/volunteer";
 import PhotosDetails from "./components/page/galleryDetail";
+import ContactUs from "./components/page/contactUs";
+import TeamsAndCondition from "./components/page/teamAndCondition";
+import VolunteerDepartment from "./components/page/volunteerDepartment";
+import VolunteerDepartmentDetail from "./components/page/volunteerDepartmentDetail";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -215,6 +219,36 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "department",
+    element: (
+      <>
+        <Helmet>
+          <title>Volunteer Department</title>
+          <meta
+            name="description"
+            content="Explore our travel gallery and see captivating photos from destinations around the world."
+          />
+        </Helmet>
+        <VolunteerDepartment />
+      </>
+    ),
+  },
+  {
+    path: "/departments/:slug",
+    element: (
+      <>
+        <Helmet>
+          <title>Volunteer Department</title>
+          <meta
+            name="description"
+            content="Explore our travel gallery and see captivating photos from destinations around the world."
+          />
+        </Helmet>
+        <VolunteerDepartmentDetail />
+      </>
+    ),
+  },
+  {
     path: "/leaderBoards/:slug",
     element: (
       <>
@@ -231,13 +265,28 @@ const router = createBrowserRouter([
     element: (
       <>
         <Helmet>
-          <title>Contact Us - Travel Consolidation</title>
+          <title>Contact us & get aload of our products</title>
           <meta
             name="description"
             content="Get in touch with our team for inquiries about travel consolidation services and partnerships."
           />
         </Helmet>
-        <AboutUs />
+        <ContactUs />
+      </>
+    ),
+  },
+  {
+    path: "teamsAndCondition",
+    element: (
+      <>
+        <Helmet>
+          <title>Terms And Conditions</title>
+          <meta
+            name="description"
+            content="Get in touch with our team for inquiries about travel consolidation services and partnerships."
+          />
+        </Helmet>
+        <TeamsAndCondition />
       </>
     ),
   },

@@ -52,7 +52,7 @@ function footer() {
                       </Link>
                     </li>
                     <li data-aos="fade-up">
-                      <Link to="/contact-us">
+                      <Link to="/contact">
                         <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
                           Contact
                         </span>
@@ -75,7 +75,7 @@ function footer() {
                       </Link>
                     </li>
                     <li data-aos="fade-up">
-                      <Link to="/">
+                      <Link to="/teamsAndCondition">
                         <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
                           Legal Terms
                         </span>
@@ -155,7 +155,7 @@ function footer() {
           <span className="flex shape11 relative right-[-17px] top-[158px] w-[200px] h-[367px] object-cover overflow-hidden"></span>
         </div>
         <div className=" absolute flex justify-start items-start bottom-[-4px]  w-full auto-container ">
-          <span className=" w-[200px] h-[367px] relative left-[159px]  flex shape13   "></span>
+          <span className=" w-[200px] h-[367px] relative left-[159px]  flex shape13  "></span>
         </div>
       </section>
     </footer>

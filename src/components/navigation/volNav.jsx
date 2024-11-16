@@ -45,7 +45,7 @@ const VolunNav = () => {
       <div className="relative flex justify-center items-center w-full 2xl:w-[1280px] px-[15px] py-[16px] at500:px-[72px] sm:px-[120px] mx-auto">
         <div className="relative w-full flex flex-col at500:flex-row justify-start items-start at500:space-x-4">
           <ul className="flex justify-start items-start space-x-4">
-            <Link className="flex w-full" to="/conference">
+            <Link className="flex w-full" to="/volunteer">
               <li
                 className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px] 
                 `}
@@ -62,17 +62,17 @@ const VolunNav = () => {
                 </span>
               </li>
             </Link>
-            <Link className="flex w-full" to="/speaker">
+            <Link className="flex w-full" to="/department">
               <li
                 className={`relative flex gap-[10px] capitalize items-center text-[#FFFFFF] py-[10px]`}
               >
                 <span
                   className={` ${
-                    activeLink === "speaker"
+                    activeLink === "department"
                       ? "!font-[600] border-b-[4px] border-b-[#FEEBFD]"
                       : ""
                   }`}
-                  onClick={() => setActiveLink("speaker")}
+                  onClick={() => setActiveLink("department")}
                 >
                   Volunteer Departments
                 </span>
