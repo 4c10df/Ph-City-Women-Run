@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import Footer from "../contents/footer";
 import Navbar from "../navigation/navbar";
 import SaveUrPotForm from "../form/saveUrPot";
-import VolunNav from "../navigation/volNav";
-import Volundepartment from "../contents/sections/volunteerSection/departmentHero";
 import DepartmentDetails from "../contents/sections/volunteerSection/departmentDetails";
 import BackNav from "../navigation/backNav";
 

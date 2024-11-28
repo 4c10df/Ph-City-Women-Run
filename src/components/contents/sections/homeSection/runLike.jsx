@@ -54,9 +54,7 @@ function RunFast() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -89,7 +87,9 @@ function RunFast() {
                       src={data.logo.url}
                       alt="background"
                     />
-                    <h4 className="text-white w-[200px]">{data.title1}</h4>
+                    <h4 className="text-white text-center w-[200px]">
+                      {data.title1}
+                    </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
                         size="play"
@@ -118,7 +118,9 @@ function RunFast() {
                       src={data.logo.url}
                       alt="background"
                     />
-                    <h4 className="text-white w-[200px]">{data.title2}</h4>
+                    <h4 className="text-white text-center w-[200px]">
+                      {data.title2}
+                    </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
                         size="play"

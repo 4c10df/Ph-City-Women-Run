@@ -82,7 +82,7 @@ function LeaderDetails() {
                         <LoadBlurHashImage
                           src={leaderBoard.runnerImage1.url}
                           blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
-                          className="w-full h-[148px] silver:w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover  overflow-hidden "
+                          className=" h-[148px] w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover  overflow-hidden "
                           alt="Discover Your Potential"
                         />
                       </div>
@@ -152,7 +152,7 @@ function LeaderDetails() {
                         <LoadBlurHashImage
                           src={leaderBoard.runnerImage2.url}
                           blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
-                          className="w-full h-[148px] silver:w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover overflow-hidden  "
+                          className=" h-[148px] w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover overflow-hidden  "
                           alt="Discover Your Potential"
                         />
                       </div>
@@ -222,7 +222,7 @@ function LeaderDetails() {
                         <LoadBlurHashImage
                           src={leaderBoard.runnerImage3.url}
                           blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
-                          className="w-full h-[148px] silver:w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover  overflow-hidden "
+                          className=" h-[148px] w-[148px] border-[2px] border-[#FFFFFF] rounded-[100%] object-cover  overflow-hidden "
                           alt="Discover Your Potential"
                         />
                       </div>
@@ -290,9 +290,9 @@ function LeaderDetails() {
                 <hr className="bg-[#F3F5F6] w-full h-[2px]" />
               </div>
             </div>
-            <div className="flex gap-[30px] flex-col justify-center items-start w-full">
+            <div className="flex gap-[30px] flex-col justify-center items-start w-full sm:pl-[40px] overflow-auto overflow-y-hidden silver:overflow-hidden">
               <h2>{leaderBoard.title}</h2>
-              <div className="flex justify-center items-center w-full">
+              <div className="flex justify-center items-center w-[1000px] silver:w-full">
                 <table className="flex flex-col gap-[30px] justify-center items-center w-full">
                   <thead className="w-full">
                     <tr>

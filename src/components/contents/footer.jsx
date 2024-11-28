@@ -18,7 +18,7 @@ function footer() {
   return (
     <footer
       id="down"
-      className="relative flex flex-col justify-center items-center w-full h-auto overflow-hidden"
+      className="relative flex flex-col justify-center items-center w-full h-auto !overflow-hidden"
     >
       <section className="bg-[#1F2126] relative flex flex-col justify-center items-center w-full ">
         <div className="static z-30 w-full flex flex-col justify-center items-center max-w-[1080px] py-[50px] px-[15px] at500:px-[64px] my-0 mx-auto ">
@@ -39,28 +39,28 @@ function footer() {
                   <ul className=" flex  justify-start items-start w-full gap-[12px]">
                     <li data-aos="fade-up">
                       <Link to="/about">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           About
                         </span>
                       </Link>
                     </li>
                     <li data-aos="fade-up">
                       <Link to="/">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           Support
                         </span>
                       </Link>
                     </li>
                     <li data-aos="fade-up">
                       <Link to="/contact">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           Contact
                         </span>
                       </Link>
                     </li>
                     <li data-aos="fade-up">
                       <Link to="/">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           FAQs
                         </span>
                       </Link>
@@ -69,14 +69,14 @@ function footer() {
                   <ul className=" flex  justify-start items-start w-full gap-[12px]">
                     <li data-aos="fade-up">
                       <Link to="/">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           Privacy Policy
                         </span>
                       </Link>
                     </li>
                     <li data-aos="fade-up">
                       <Link to="/teamsAndCondition">
-                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#ED3237]">
+                        <span className="font-[106] text-[16px] leading-[19.84px] text-[#FFFFFF] hover:text-[#5C176F]">
                           Legal Terms
                         </span>
                       </Link>
@@ -90,7 +90,7 @@ function footer() {
                       <a href="https://www.tiktok.com/@ph.city.women.run?_t=8qrotYxit9h&_r=1">
                         <FaTiktok
                           size={20}
-                          className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
+                          className=" text-[#FFFFFF] hover:text-[#5C176F] transition-all duration-300 ease-in-out"
                         />
                       </a>
                     </li>
@@ -98,7 +98,7 @@ function footer() {
                       <a href="https://x.com/phcitywomenrun?t=Ot9NLKru8NzQ6IT4v8raVA&s=08">
                         <FaXTwitter
                           size={20}
-                          className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
+                          className=" text-[#FFFFFF] hover:text-[#5C176F] transition-all duration-300 ease-in-out"
                         />
                       </a>
                     </li>
@@ -106,7 +106,7 @@ function footer() {
                       <a href="https://www.facebook.com/share/15admwWdT5/">
                         <FaFacebook
                           size={20}
-                          className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
+                          className=" text-[#FFFFFF] hover:text-[#5C176F] transition-all duration-300 ease-in-out"
                         />
                       </a>
                     </li>
@@ -114,7 +114,7 @@ function footer() {
                       <a href="https://youtube.com/@phcitywomenrun?si=zRET8Il3FEZ8l7XD">
                         <FaYoutube
                           size={20}
-                          className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
+                          className=" text-[#FFFFFF] hover:text-[#5C176F] transition-all duration-300 ease-in-out"
                         />
                       </a>
                     </li>
@@ -122,7 +122,7 @@ function footer() {
                       <a href="https://www.instagram.com/phcitywomenrun/profilecard/?igsh=MnFkZ3V1a2I0a3Ro">
                         <FaInstagram
                           size={20}
-                          className=" text-[#FFFFFF] hover:text-[#ED3237] transition-all duration-300 ease-in-out"
+                          className=" text-[#FFFFFF] hover:text-[#5C176F] transition-all duration-300 ease-in-out"
                         />
                       </a>
                     </li>
@@ -135,7 +135,7 @@ function footer() {
             {/* <!--copyright--> */}
             <div
               data-aos="fade-up"
-              className="flex flex-col gap-[6px] justify-start items-start w-full h-auto my-[30px] "
+              className="flex flex-col gap-[6px] justify-start items-start w-full h-auto mt-[30px] "
             >
               <div className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">

@@ -52,8 +52,16 @@ const Blogs = () => {
     fetchData();
   }, []);
 
-  if (loading) return <Loading />;
-  if (error) return <p>Error fetching data</p>;
+ if (loading)
+   return (
+     <p className="h-[20vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white"></p>
+   );
+ if (error)
+   return (
+     <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
+       Let's get you back online
+     </p>
+   );
 
   const chunkPosts = (posts, size) => {
     const chunks = [];

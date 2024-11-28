@@ -57,9 +57,7 @@ function YourPotential() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -78,7 +76,7 @@ function YourPotential() {
             alt="background"
           />
         </div>
-        
+
         <div className="absolute flex flex-col at500:flex-row  justify-center items-center bottom-[414px]  w-full auto-container  ">
           <span className="z-[1] shape11 relative right-[189px]   w-[200px] h-[367px] object-cover "></span>
 

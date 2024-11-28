@@ -72,8 +72,16 @@ const  LatestBlogs = () => {
     return `${day}${getDaySuffix(day)} ${month} ${year}`;
   };
 
-  if (loading) return <Loading />;
-  if (error) return <p>Error fetching data</p>;
+  if (loading)
+    return (
+      <p className="h-[20vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white"></p>
+    );
+  if (error)
+    return (
+      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
+        Let's get you back online
+      </p>
+    );
 
   return (
     <section className="relative flex justify-center flex-col items-center w-full h-auto overflow-hidden">

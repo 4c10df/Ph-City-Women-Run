@@ -49,13 +49,11 @@ function SpeakerHeroSection() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
-      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
         Let's get you back online
       </p>
     );

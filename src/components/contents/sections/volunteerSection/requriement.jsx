@@ -47,9 +47,7 @@ const Requirements = () => {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (

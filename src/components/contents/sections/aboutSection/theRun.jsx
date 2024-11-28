@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FaRegCalendar } from "react-icons/fa6";
-import imageOne from "../../image/homeImg/1d5d5d58530a43a193941eb68bc83221.jpeg";
 import location from "../../image/logo/route-svgrepo-com 1.png";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// import Link from "./link";
 
 import Button from "../../Button";
 
@@ -52,43 +49,40 @@ function SpecificGoal() {
 
   if (loading)
     return (
-      <p className="h-[20vh] w-full bg-slate-500 flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
-      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
         Let's get you back online
       </p>
     );
- const formatDate = (dateString) => {
-   const date = new Date(dateString);
-   const dayOfWeek = date.toLocaleString("default", { weekday: "long" }); // Get day in words
-   const dayOfMonth = date.getDate(); // Get numeric day of the month
-   const month = date.toLocaleString("default", { month: "long" });
-   const year = date.getFullYear();
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const dayOfWeek = date.toLocaleString("default", { weekday: "long" }); // Get day in words
+    const dayOfMonth = date.getDate(); // Get numeric day of the month
+    const month = date.toLocaleString("default", { month: "long" });
+    const year = date.getFullYear();
 
-   // Determine the correct suffix for the day
-   const getDaySuffix = (day) => {
-     if (day > 3 && day < 21) return "th";
-     switch (day % 10) {
-       case 1:
-         return "st";
-       case 2:
-         return "nd";
-       case 3:
-         return "rd";
-       default:
-         return "th";
-     }
-   };
+    // Determine the correct suffix for the day
+    const getDaySuffix = (day) => {
+      if (day > 3 && day < 21) return "th";
+      switch (day % 10) {
+        case 1:
+          return "st";
+        case 2:
+          return "nd";
+        case 3:
+          return "rd";
+        default:
+          return "th";
+      }
+    };
 
-   return `${dayOfWeek}, ${dayOfMonth}${getDaySuffix(
-     dayOfMonth
-   )} ${month} ${year}`;
- };
-
+    return `${dayOfWeek}, ${dayOfMonth}${getDaySuffix(
+      dayOfMonth
+    )} ${month} ${year}`;
+  };
 
   return (
     <>
@@ -104,7 +98,10 @@ function SpecificGoal() {
       >
         <div className="static flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[110px] sm:px-[72px] my-0 mx-auto">
           <div className="flex justify-center    md:px-[40px] w-full max-w-[1121px] ">
-            <div className="custom-blur-shadow flex gap-[20px] flex-col rounded-[24px] justify-between items-center w-full py-[30px] at500:py-[100px] px-[10px] md:px-[40px] overflow-hidden">
+            <div
+              data-aos="zoom-in"
+              className="custom-blur-shadow flex gap-[20px] flex-col rounded-[24px] justify-between items-center w-full py-[30px] at500:py-[100px] px-[10px] md:px-[40px] overflow-hidden"
+            >
               <div className="flex flex-col justify-center items-center silver:w-[716px]">
                 <h2 className="text-[#FFFFFF] !text-[40px]">
                   {data.nameOfSection}

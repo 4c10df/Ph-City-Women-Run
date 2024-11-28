@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import {GoChevronRight } from "react-icons/go";
+import { GoChevronRight } from "react-icons/go";
 import { BsAlarm } from "react-icons/bs";
 import imageOne from "../../image/homeImg/ad392b203979406835370d3e44b10714.jpeg";
 import AOS from "aos";
@@ -58,9 +58,7 @@ function Department() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -91,9 +89,9 @@ function Department() {
                   </h4>
 
                   <Link to={`/departments/${department.slug}`}>
-                  <div className="flex h-auto  justify-center items-center  ">
-                    <GoChevronRight className="flex rounded-[100px] h-[40px] bg-white justify-center items-center w-[40px]  text-[#1F2126]  " />
-                  </div>
+                    <div className="flex h-auto  justify-center items-center  ">
+                      <GoChevronRight className="flex rounded-[100px] h-[40px] bg-white justify-center items-center w-[40px]  text-[#1F2126]  " />
+                    </div>
                   </Link>
                 </div>
               </div>

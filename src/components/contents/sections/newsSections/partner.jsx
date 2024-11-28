@@ -90,23 +90,29 @@ function Partnership() {
     <>
       <section className=" relative pt-[161px] flex justify-center items-center w-full h-auto ">
         <div className="static auto-container flex flex-col justify-center items-center w-full px-[15px] pt-[110px] pb-[20px] at500:px-[70px] my-0 mx-auto">
-          <div className="flex bg-[#8D12AB] justify-center items-center w-full h-auto p-[10px]">
+          <div className="flex  justify-center items-center w-full h-auto p-[10px]">
             <div className="flex gap-[30px] flex-col silver:flex-row justify-center items-center w-full h-auto ">
               <div
                 data-aos="zoom-in"
+                data-aos-delay="1000"
+                data-aos-duration="2000"
                 className="relative flex justify-start items-start h-[258px] w-full rounded-[12px]"
               >
                 <LoadBlurHashImage
                   src={data.image.url}
-                  blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
+                  blurHash="LKO2?U%2Tw=w]~RBVZRi};RPxuwH" // Replace with actual blurhash
                   className="w-full h-[258px] lg:w-[522px] object-cover rounded-[16px] overflow-hidden"
                   alt="Discover Your Potential"
                 />
+               
               </div>
               <div className="flex flex-col gap-[24px] justify-center items-start w-full max-w-[548px]">
-                <h2 className=" text-[#111E2F] leading-[24px] sm:leading-[52px] sm:text-[40px]">
-                  {data.title}
-                </h2>
+                <div className="bg-[#8D12AB] p-3 rounded-l-[6px]">
+                  <h2 className=" text-white leading-[24px] sm:leading-[52px] sm:text-[40px]">
+                    {data.title}
+                  </h2>
+                </div>
+
                 <span className="text-[#7E8EA2] txt5 !font-[84]">
                   {data.subtext}
                 </span>

@@ -5,14 +5,14 @@ import "aos/dist/aos.css";
 import Button from "../../Button";
 
 function RouteMap() {
- const [data, setData] = useState(null);
- const [loading, setLoading] = useState(true);
- const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
- const hygraphEndpoint =
-   "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+  const hygraphEndpoint =
+    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
- const query = `{
+  const query = `{
   theRun(where: {id: "cm2xc6ibs0mtc07pggca1ta4f"}) {
     id
     nameOfSection
@@ -20,37 +20,35 @@ function RouteMap() {
   }
 }`;
 
- useEffect(() => {
-   const fetchData = async () => {
-     try {
-       const response = await axios.post(hygraphEndpoint, { query });
-       setData(response.data.data.theRun);
-       setLoading(false);
-     } catch (err) {
-       setError(err);
-       setLoading(false);
-     }
-   };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(hygraphEndpoint, { query });
+        setData(response.data.data.theRun);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
 
-   fetchData();
- }, []);
+    fetchData();
+  }, []);
 
- useEffect(() => {
-   AOS.init({ duration: 2000, once: true });
- }, []);
+  useEffect(() => {
+    AOS.init({ duration: 2000, once: true });
+  }, []);
 
- if (loading)
-   return (
-     <p className="h-[20vh] w-full bg-slate-500 flex justify-center items-center leading-tight text-[20px] text-white">
-       Loading...
-     </p>
-   );
- if (error)
-   return (
-     <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
-       Let's get you back online
-     </p>
-   );
+  if (loading)
+    return (
+      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
+    );
+  if (error)
+    return (
+      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
+        Let's get you back online
+      </p>
+    );
   return (
     <section className="relative flex flex-col justify-center items-center  bg-[#EDF5FD] h-auto w-full overflow-hidden">
       <div className="static flex flex-col justify-center items-center w-full h-auto ">

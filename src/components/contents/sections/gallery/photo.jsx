@@ -74,15 +74,15 @@ function Photos() {
               {gallery.backgroundText}
             </div>
             <div className="static  gap-[40px] flex flex-col justify-center items-center w-full  px-[15px] py-[50px] at500:px-[72px] my-0 mx-auto ">
-              <div className="  flex  justify-center items-center w-full">
-                <div className=" relative bottom-[-71px] flex flex-col gap-4  justify-center items-center">
+              <div className="  flex flex-col-reverse at500:flex-row justify-center items-center w-full">
+                <div className=" relative bottom-[-71px] flex flex-col gap-1  justify-center items-center">
                   <img
                     className="h-auto w-[110.84px]"
                     src={gallery.logo.url}
                     alt=""
                   />
                   <img
-                    className="  object-cover h-[159px] w-[314px]"
+                    className="   object-contain h-[159px] w-[314px]"
                     src={gallery.shoe.url}
                     alt=""
                   />
@@ -96,11 +96,13 @@ function Photos() {
                 <span className=" relative bottom-9 text-white">
                   {gallery.date}
                 </span>
-                <img
-                  className="h-[351px]  w-[308px] object-cover"
-                  src={gallery.coverImage.url}
-                  alt=""
-                />
+                <div className="flex z-30 overflow-hidden h-[351px]  w-[308px]">
+                  <img
+                    className="h-[500px] relative top-[-45px]  w-[208px] object-cover"
+                    src={gallery.coverImage.url}
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
 

@@ -10,7 +10,6 @@ function Volunteer() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
@@ -47,9 +46,7 @@ function Volunteer() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (

@@ -5,7 +5,6 @@ import "aos/dist/aos.css";
 import Button from "../../Button";
 import background from "../../image/logo/af9f2983ca064a6bc0b8dd03a1b542df.png";
 
-
 function Rules() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -44,28 +43,25 @@ function Rules() {
     AOS.init({ duration: 2000, once: true });
   }, []);
 
-   const handleDownload = () => {
-     if (data?.rulesAndRegulationsPdf?.url) {
-       const link = document.createElement("a");
-       link.href = data.rulesAndRegulationsPdf.url;
-       link.target = "_blank"; // Opens in a new window/tab
-       link.download = "Rules.pdf"; // Suggested filename for download
-       document.body.appendChild(link);
-       link.click();
-       document.body.removeChild(link);
-     }
-   };
-
+  const handleDownload = () => {
+    if (data?.rulesAndRegulationsPdf?.url) {
+      const link = document.createElement("a");
+      link.href = data.rulesAndRegulationsPdf.url;
+      link.target = "_blank"; // Opens in a new window/tab
+      link.download = "Rules.pdf"; // Suggested filename for download
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
-      <p className="h-[30vh] flex justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
         Let's get you back online
       </p>
     );

@@ -61,9 +61,7 @@ const ImageSlider = () => {
 
   if (loading)
     return (
-      <p className="h-[100vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[100vh] bg-slate-500 flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (

@@ -34,13 +34,13 @@ function CommunitEvents() {
             </div>
             <LatestBlogs />
 
-            <div className="flex justify-center items-center w-full">
+            <div className="flex z-40 justify-center items-center w-full">
               <Link to="/news">
                 <div
                   data-aos="zoom-in"
                   className="flex pt-[20px] justify-start w-[201px] z-40"
                 >
-                  <Button size="play" className="">
+                  <Button size="play" className="z-40">
                     Explore all
                   </Button>
                 </div>

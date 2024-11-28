@@ -18,6 +18,9 @@ function Thecount() {
   homepage(where: {id: "cm34sksea08cp07pnkzjsinh1"}) {
     
     schedule
+    image1 {
+      url
+    }
   }
 }`;
 
@@ -42,9 +45,7 @@ function Thecount() {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white">
-        Loading...
-      </p>
+      <p className="h-[20vh] flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -57,7 +58,7 @@ function Thecount() {
     <section
       className="relative flex flex-col justify-center items-center bg-fixed bg-cover bg-blend-multiply bg-[#00000033] silver:h-[243px] w-full"
       style={{
-        backgroundImage: `url(${imageTwo})`,
+        backgroundImage: `url(${data.image1.url})`,
         backgroundColor: "#000000BF",
         backgroundBlendMode: "multiply",
         backgroundSize: "cover",

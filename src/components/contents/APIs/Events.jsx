@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "../link";
 import Loading from "./loading";
 import Button from "../Button"
+import Error from "../../errorMessage/error";
 
 const Events = () => {
   const [data, setData] = useState(null);
@@ -14,7 +15,7 @@ const Events = () => {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-    posts {
+    events {
       id
       title
       slug
@@ -36,7 +37,7 @@ const Events = () => {
         const response = await axios.post(hygraphEndpoint, {
           query: query,
         });
-        setData(response.data.data.posts);
+        setData(response.data.data.events);
         setLoading(false);
       } catch (err) {
         setError(err);
@@ -48,7 +49,7 @@ const Events = () => {
   }, []);
 
   if (loading) return <Loading />;
-  if (error) return <p>Error fetching data</p>;
+  if (error) return <Error/>;
 
  
 
@@ -81,24 +82,24 @@ const Events = () => {
     <section className="relative flex justify-center flex-col items-center w-full h-auto overflow-hidden">
       <div className="static flex  flex-col justify-center items-center w-full  py-[70px]  at500:px-[15px] my-0 mx-auto">
         <div className="grid items-start grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-y-8 gap-x-5 w-full sm:pb-[90px]">
-          {data.slice(0, postLimit).map((post) => (
+          {data.slice(0, postLimit).map((event) => (
             <div
-              key={post.id}
+              key={event.id}
               className="flex bg-[#FFFFFF] gap-[16px] flex-col justify-center items-start w-full"
             >
-              {post.coverImage && (
+              {event.coverImage && (
                 <img
                   className="h-[220px] w-full rounded-[8px] object-cover"
-                  src={post.coverImage.url}
-                  alt={post.coverImage.fileName}
+                  src={event.coverImage.url}
+                  alt={event.coverImage.fileName}
                 />
               )}
-              <Link to={`/posts/${post.slug}`}>
+              <Link to={`/posts/${event.slug}`}>
                 <div className="flex flex-col gap-[8px] silver:w-[357px] px-[10px] pb-[10px]">
-                  <h6 className="text-[#353F50]">{post.title}</h6>
-                  <span className="text-[#7E8EA2] txt">{post.excerpt}</span>
+                  <h6 className="text-[#353F50]">{event.title}</h6>
+                  <span className="text-[#7E8EA2] txt">{event.excerpt}</span>
                   <span className="text-[#7E8EA2] leading-[18.9px] text-[14px]">
-                    {formatDate(post.date)}
+                    {formatDate(event.date)}
                   </span>
                 </div>
               </Link>
