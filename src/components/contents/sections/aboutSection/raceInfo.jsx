@@ -18,7 +18,7 @@ import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 import Button from "../../Button";
 
-const RaceInfo = ({ openConferenceform }) => {
+const RaceInfo = ({ openOverlay }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -75,9 +75,7 @@ const RaceInfo = ({ openConferenceform }) => {
 
   if (loading)
     return (
-      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
-       
-      </p>
+      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -302,7 +300,7 @@ const RaceInfo = ({ openConferenceform }) => {
                   </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button onClick={openConferenceform} size="play" className="">
+                  <Button onClick={openOverlay} size="play" className="">
                     Register Now
                   </Button>
                 </div>
@@ -328,6 +326,6 @@ const RaceInfo = ({ openConferenceform }) => {
       </section>
     </>
   );
-}
+};
 
 export default RaceInfo;

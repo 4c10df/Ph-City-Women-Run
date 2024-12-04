@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 import Button from "../../Button";
 
-const RunFast = ({ openVolunteerform }) => {
+const RunFast = ({ openOverlay }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -92,7 +92,7 @@ const RunFast = ({ openVolunteerform }) => {
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
-                        onClick={openVolunteerform}
+                        onClick={openOverlay}
                         size="play"
                         className="!bg-[#FFFFFF] !text-[#121F30]"
                       >
@@ -124,7 +124,7 @@ const RunFast = ({ openVolunteerform }) => {
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
-                        onClick={openVolunteerform}
+                        onClick={openOverlay}
                         size="play"
                         className="!bg-[#FFFFFF] !text-[#121F30]"
                       >
@@ -147,6 +147,6 @@ const RunFast = ({ openVolunteerform }) => {
       </section>
     </>
   );
-}
+};
 
 export default RunFast;

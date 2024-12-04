@@ -304,7 +304,7 @@ const Navbar = ({ openOverlay }) => {
             {/* Mobile Menu */}
             {toggle && (
               <div
-                className={`mobile-menu  silver:hidden fixed top-0 right-0 flex flex-col items-end justify-start  bg-black bg-opacity-90 text-white h-full w-full max-w-[300px] transition-transform transform ${
+                className={`mobile-menu  silver:hidden fixed top-0 right-0 flex flex-col items-end justify-start h-screen bg-black bg-opacity-90 text-white  w-full max-w-[300px] transition-transform transform ${
                   toggle ? "translate-x-0" : "-translate-x-full"
                 }`}
               >

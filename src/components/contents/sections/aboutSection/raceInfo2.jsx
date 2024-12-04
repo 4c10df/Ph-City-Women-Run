@@ -18,7 +18,7 @@ import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 import Button from "../../Button";
 
-const RaceInfo10km = ({ openConferenceform }) => {
+const RaceInfo10km = ({ openOverlay }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -297,7 +297,7 @@ const RaceInfo10km = ({ openConferenceform }) => {
                   </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button onClick={openConferenceform} size="play" className="">
+                  <Button onClick={openOverlay} size="play" className="">
                     Register Now
                   </Button>
                 </div>
@@ -323,6 +323,6 @@ const RaceInfo10km = ({ openConferenceform }) => {
       </section>
     </>
   );
-}
+};
 
 export default RaceInfo10km;

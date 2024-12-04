@@ -37,8 +37,8 @@ function AboutUs() {
           closeConferenceform={closeConferenceform}
         />
         <TheRun />
-        <Race openConferenceform={openConferenceform}  />
-        <Race2 openConferenceform={openConferenceform} />
+        <Race openOverlay={openOverlay} />
+        <Race2 openOverlay={openOverlay} />
         <Prizes />
         <Rules />
         <RouteMap />

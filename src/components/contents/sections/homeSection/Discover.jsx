@@ -8,6 +8,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../../Button";
 import background2 from "../../image/logo/PH CITY WOMEN RUN BRAND LOGO  221.png";
+import { Link } from "react-router-dom";
 
 function YourPotential() {
   const [data, setData] = useState(null);
@@ -122,9 +123,11 @@ function YourPotential() {
                   {data.subtitle2}
                 </span>
                 <div className="flex justify-center w-[225px]">
-                  <Button size="medium" className="bg-white text-[#0A1D33]">
-                    Learn about the Route
-                  </Button>
+                  <Link className="w-full" to={"/about"}>
+                    <Button size="medium" className="bg-white text-[#0A1D33]">
+                      Learn about the Route
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

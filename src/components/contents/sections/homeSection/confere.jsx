@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 import Button from "../../Button";
 
-function ConferenceSection() {
+const ConferenceSection = ({ openConferenceform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -87,7 +87,11 @@ function ConferenceSection() {
                   data-aos="zoom-in"
                   className="flex pt-[20px] justify-start w-full at500:w-[201px] z-40"
                 >
-                  <Button size="play" className="!bg-[#5C176F]">
+                  <Button
+                    onClick={openConferenceform}
+                    size="play"
+                    className="!bg-[#5C176F]"
+                  >
                     Register Now
                   </Button>
                 </div>

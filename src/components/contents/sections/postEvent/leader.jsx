@@ -64,23 +64,25 @@ function Leader() {
   // Apply search and filter logic
   const filteredData = data
     .filter((leaderBoard) => {
-      const date = new Date(leaderBoard.date);
-      const month = date.toLocaleString("default", { month: "long" });
+      if (!leaderBoard.date) return false; // Skip entries with no date
+
+      const date = new Date(leaderBoard.date.replace(/-/g, "/")); // Ensure mobile compatibility
+      if (isNaN(date.getTime())) return false; // Skip invalid dates
+
+      const month = date.toLocaleString("en-US", { month: "long" });
       const year = date.getFullYear().toString();
 
-      // Search filter based on month or year
       return (
         month.toLowerCase().includes(searchTerm.toLowerCase()) ||
         year.includes(searchTerm)
       );
     })
     .filter((leaderBoard, index) => {
-      // Filter by the selected option (only display the first 3 items if "Less" is selected)
-      if (filterOption === "Less") {
-        return index < 3;
-      }
+      if (filterOption === "Less") return index < 3;
       return true;
     });
+
+  console.log("Filtered Data:", filteredData);
 
   return (
     <>

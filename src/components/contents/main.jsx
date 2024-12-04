@@ -10,23 +10,28 @@ import Thecount from "./sections/homeSection/count";
 import AchievementsSection from "./sections/homeSection/achievements";
 import Volunteer from "./sections/homeSection/volunSection";
 import ShirtsSection from "./sections/homeSection/shirts";
-import VolunteerForm from "../form/volunteer-form";
+import SaveUrPotForm from "../form/saveUrPot";
+import ConferenceForm from "../form/conferenceForm";
 
 function Main() {
-  const [isOpenVolunteerform, setIsOpenVolunteerform] = useState(false);
-  const openVolunteerform = () => setIsOpenVolunteerform(true);
-  const closeVolunteerform = () => setIsOpenVolunteerform(false);
+    const [isOpen, setIsOpen] = useState(false);
+    const [isOpenConferenceform, setIsOpenConferenceform] = useState(false);
+    const openOverlay = () => setIsOpen(true);
+    const closeOverlay = () => setIsOpen(false);
+    const openConferenceform = () => setIsOpenConferenceform(true);
+    const closeConferenceform = () => setIsOpenConferenceform(false);
 
   return (
     <div className="relative flex flex-col justify-center items-center w-full ">
-      <VolunteerForm
-        isOpenVolunteerform={isOpenVolunteerform}
-        closeVolunteerform={closeVolunteerform}
+      <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
+      <ConferenceForm
+        isOpenConferenceform={isOpenConferenceform}
+        closeConferenceform={closeConferenceform}
       />
       <Thecount />
-      <RunLikeNever openVolunteerform={openVolunteerform}  />
+      <RunLikeNever openOverlay={openOverlay} />
       <Volunteer />
-      <ConferenceSection />
+      <ConferenceSection openConferenceform={openConferenceform} />
       <ShirtsSection />
       <CommunitEvents />
       <AchievementsSection />
