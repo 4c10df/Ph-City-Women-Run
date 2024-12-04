@@ -39,8 +39,10 @@ function Leader() {
       try {
         const response = await axios.post(hygraphEndpoint, { query });
         setData(response.data.data.leaderBoards);
+        console.log("API Response:", response.data.data.leaderBoards);
         setLoading(false);
       } catch (err) {
+        console.error("API Error:", err);
         setError(err);
         setLoading(false);
       }
@@ -64,13 +66,22 @@ function Leader() {
   // Apply search and filter logic
   const filteredData = data
     .filter((leaderBoard) => {
-      if (!leaderBoard.date) return false; // Skip entries with no date
+      if (!leaderBoard.date) {
+        console.error("Missing date for:", leaderBoard);
+        return false; // Skip entries with no date
+      }
 
-      const date = new Date(leaderBoard.date.replace(/-/g, "/")); // Ensure mobile compatibility
-      if (isNaN(date.getTime())) return false; // Skip invalid dates
+      // Standardize date parsing for mobile compatibility
+      const date = new Date(leaderBoard.date.replace(/-/g, "/"));
+      if (isNaN(date.getTime())) {
+        console.error("Invalid date format:", leaderBoard.date);
+        return false; // Skip invalid dates
+      }
 
       const month = date.toLocaleString("en-US", { month: "long" });
       const year = date.getFullYear().toString();
+
+      console.log("Month:", month, "Year:", year, "Search Term:", searchTerm);
 
       return (
         month.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -86,9 +97,9 @@ function Leader() {
 
   return (
     <>
-      <section className="relative pt-[61px] bg-white flex justify-center items-center w-full h-auto ">
+      <section className="relative pt-[61px] bg-white flex justify-center items-center w-full h-auto">
         <div className="static auto-container gap-[60px] flex flex-col justify-center items-center w-full px-[15px] py-[190px] at500:px-[72px] my-0 mx-auto">
-          <div className="flex flex-col at594:flex-row gap-[20px] at594:items-center justify-between w-full ">
+          <div className="flex flex-col at594:flex-row gap-[20px] at594:items-center justify-between w-full">
             <div className="flex justify-center items-center h-[48px] w-full max-w-[322px] px-[20px] border-[1px] shadow-lg border-[#171B1E33] rounded-[8px] overflow-hidden">
               <input
                 className="bg-none h-[48px] w-full focus:outline-none"
@@ -97,7 +108,7 @@ function Leader() {
                 value={searchTerm}
                 onChange={handleSearchChange}
               />
-              <span className="flex justify-center items-center gap-[10px] pl-[13px] border-l-[2px]  border-[#E1E6ED] text-[#8D12AB]">
+              <span className="flex justify-center items-center gap-[10px] pl-[13px] border-l-[2px] border-[#E1E6ED] text-[#8D12AB]">
                 <FaSearch />
                 Search
               </span>
@@ -123,7 +134,7 @@ function Leader() {
             </div>
           )}
 
-          <div className="flex  gap-[50px] flex-col justify-center items-center w-full  ">
+          <div className="flex gap-[50px] flex-col justify-center items-center w-full">
             <div className="flex gap-[50px] flex-col justify-center items-center w-full">
               {filteredData.map((leaderBoard) => (
                 <div
@@ -135,19 +146,19 @@ function Leader() {
                       <LoadBlurHashImage
                         src={leaderBoard.coverImage.url}
                         blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
-                        className="w-full h-[516px] silver:w-[540px] object-cover "
+                        className="w-full h-[516px] silver:w-[540px] object-cover"
                         alt="Discover Your Potential"
                       />
                     </div>
                   )}
-                  <div className="relative flex flex-col justify-center items-start sm:items-center gap-[20px] sm:gap-[22px] p-[20px] w-full ">
+                  <div className="relative flex flex-col justify-center items-start sm:items-center gap-[20px] sm:gap-[22px] p-[20px] w-full">
                     <div className="relative flex flex-col justify-center items-start gap-[20px] max-w-[300px]">
                       <div className="flex gap-[20px] flex-col justify-start items-start w-full">
                         <span className="text-[#353F50]">
                           {leaderBoard.date}
                         </span>
                         <div>
-                          <h5 className=" mb-[10px] text-[#111E2F]">
+                          <h5 className="mb-[10px] text-[#111E2F]">
                             {leaderBoard.typeOfRun}
                           </h5>
                           <span className="text-[#4E5A6C]">
