@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BsAlarm } from "react-icons/bs";
-import imageOne from "../../image/homeImg/ad392b203979406835370d3e44b10714.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -10,7 +8,7 @@ import "aos/dist/aos.css";
 import Button from "../../Button";
 import ScheduleCountdown from "../scheduleCount";
 
-function Volundepartment() {
+const Volundepartment = ({ openVolunteerform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -88,9 +86,11 @@ function Volundepartment() {
               </div>
 
               <div className="flex justify-start w-full at500:w-[201px]">
-                <Button size="play" className="">
-                  Volunteer Now
-                </Button>
+       
+                  <Button onClick={openVolunteerform} size="play" className="">
+                    Volunteer Now
+                  </Button>
+               
               </div>
             </div>
           </div>

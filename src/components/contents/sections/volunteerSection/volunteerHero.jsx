@@ -10,7 +10,8 @@ import "aos/dist/aos.css";
 import Button from "../../Button";
 import ScheduleCountdown from "../scheduleCount";
 
-function VolunSection() {
+const VolunSection = ({ openVolunteerform }) => {
+ 
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -88,7 +89,7 @@ function VolunSection() {
               </div>
 
               <div className="flex justify-start w-full at500:w-[201px]">
-                <Button size="play" className="">
+                <Button onClick={openVolunteerform} size="play" className="">
                   Volunteer Now
                 </Button>
               </div>
@@ -98,6 +99,6 @@ function VolunSection() {
       </section>
     </>
   );
-}
+};
 
 export default VolunSection;

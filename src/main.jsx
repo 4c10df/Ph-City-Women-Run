@@ -22,6 +22,7 @@ import ContactUs from "./components/page/contactUs";
 import TeamsAndCondition from "./components/page/teamAndCondition";
 import VolunteerDepartment from "./components/page/volunteerDepartment";
 import VolunteerDepartmentDetail from "./components/page/volunteerDepartmentDetail";
+import ShopItems from "./components/page/shop";
 
 // Router configuration
 const router = createBrowserRouter([
@@ -257,6 +258,18 @@ const router = createBrowserRouter([
           <meta name="description" content="Check ." />
         </Helmet>
         <LeaderBoard />
+      </>
+    ),
+  },
+  {
+    path: "/shop/:slug",
+    element: (
+      <>
+        <Helmet>
+          <title>purchase</title>
+          <meta name="description" content="Check ." />
+        </Helmet>
+        <ShopItems />
       </>
     ),
   },

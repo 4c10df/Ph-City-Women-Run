@@ -8,20 +8,28 @@ import ConferenecNav from "../navigation/conNav";
 import Venue from "../contents/sections/conSection/venue";
 import TalkAbout from "../contents/sections/conSection/talk";
 import DayToExplore from "../contents/sections/conSection/day";
+import ConferenceForm from "../form/conferenceForm";
 
 function Conference() {
-  const [isOpen, setIsOpen] = useState(false);
-  const openOverlay = () => setIsOpen(true);
-  const closeOverlay = () => setIsOpen(false);
+   const [isOpen, setIsOpen] = useState(false);
+   const [isOpenConferenceform, setIsOpenConferenceform] = useState(false);
+   const openOverlay = () => setIsOpen(true);
+   const closeOverlay = () => setIsOpen(false);
+   const openConferenceform = () => setIsOpenConferenceform(true);
+   const closeConferenceform = () => setIsOpenConferenceform(false);
 
   return (
     <>
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
+        <ConferenceForm
+          isOpenConferenceform={isOpenConferenceform}
+          closeConferenceform={closeConferenceform}
+        />
         <ConferenecNav />
-        <HeroSection />
-        <DayToExplore/>
+        <HeroSection openConferenceform={openConferenceform} />
+        <DayToExplore />
         <TalkAbout />
         <Venue />
         <ConfereneVideo />

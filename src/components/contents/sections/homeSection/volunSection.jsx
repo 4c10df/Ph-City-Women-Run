@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../../Button";
@@ -72,9 +73,12 @@ function Volunteer() {
               data-aos="zoom-in"
               className="flex pt-[20px]  justify-start w-full sm:max-w-[206px]"
             >
-              <Button size="play" className="!bg-[#5C176F]">
-                <span className="z-20">Become a Volunteer</span>
-              </Button>
+              
+              <Link to={"/volunteer"}>
+                <Button size="play" className="!bg-[#5C176F]">
+                  <span className="z-20">Become a Volunteer</span>
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

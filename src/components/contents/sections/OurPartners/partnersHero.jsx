@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 import Button from "../../Button";
 
-function PartnerHeroSection() {
+const PartnerHeroSection = ({ openConferenceform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -79,7 +79,7 @@ function PartnerHeroSection() {
                 {data.subtitle1}
               </span>
               <div className="flex justify-start w-full at500:w-[201px] mt-[20px]">
-                <Button size="play" className="">
+                <Button onClick={openConferenceform} size="play" className="">
                   Become a Partner
                 </Button>
               </div>

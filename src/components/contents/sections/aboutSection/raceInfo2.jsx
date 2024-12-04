@@ -10,15 +10,15 @@ import icon5 from "../../image/icons/security-open-access-unlock-svgrepo-com.png
 import location from "../../image/logo/route-svgrepo-com 21.png";
 import shape1 from "../../image/logo/af9f2983ca064a6bc0b8dd03a1b542df.png";
 import shape2 from "../../image/shapes/Frame 1686560676.png";
-
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoadBlurHashImage from "../../../lazy/loadBlurHash";
-// import Link from "./link";
+
 
 import Button from "../../Button";
 
-function RaceInfo10km() {
+const RaceInfo10km = ({ openConferenceform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -75,9 +75,7 @@ function RaceInfo10km() {
 
   if (loading)
     return (
-      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
-       
-      </p>
+      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
     );
   if (error)
     return (
@@ -292,12 +290,14 @@ function RaceInfo10km() {
                 className="flex flex-col at500:flex-row gap-[24px] justify-between items-center w-full max-w-[426px]"
               >
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button size="large" className="  !text-[#121F30]">
-                    Preorder Shirts
-                  </Button>
+                  <Link className="block w-full h-full" to={"/"}>
+                    <Button size="large" className="  !text-[#121F30]">
+                      Preorder Shirts
+                    </Button>
+                  </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button size="play" className="">
+                  <Button onClick={openConferenceform} size="play" className="">
                     Register Now
                   </Button>
                 </div>

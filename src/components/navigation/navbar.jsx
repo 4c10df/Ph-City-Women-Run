@@ -7,37 +7,37 @@ import { HiMenuAlt3 } from "react-icons/hi";
 import Button from "../contents/Button";
 import logo1 from "./logos/TRADEMARKED PH CITY WOMEN PNG 1 3.png";
 import logo2 from "./logos/156a5363dc0856d3728fb5e10c7538f4.png";
-import Link from "../contents/link";
+import { Link } from "react-router-dom";
 import "@fontsource/geist-sans";
 
 const Navbar = ({ openOverlay }) => {
-   const { pathname } = useLocation();
-   const [toggle, setToggle] = useState(false);
-   const [scrolled, setScrolled] = useState(false);
-   const [activeLink, setActiveLink] = useState(pathname);
-   const [isScrollingUp, setIsScrollingUp] = useState(true);
-   const [lastScrollY, setLastScrollY] = useState(0);
-   const isHomePage = pathname === "/";
-   const isTheRunPage = pathname === "/about";
+  const { pathname } = useLocation();
+  const [toggle, setToggle] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState(pathname);
+  const [isScrollingUp, setIsScrollingUp] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const isHomePage = pathname === "/";
+  const isTheRunPage = pathname === "/about";
 
-   useEffect(() => {
-     const handleScroll = () => {
-       setScrolled(window.scrollY > 0);
-       setIsScrollingUp(window.scrollY <= lastScrollY);
-       setLastScrollY(window.scrollY);
-     };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+      setIsScrollingUp(window.scrollY <= lastScrollY);
+      setLastScrollY(window.scrollY);
+    };
 
-     window.addEventListener("scroll", handleScroll);
-     return () => window.removeEventListener("scroll", handleScroll);
-   }, [lastScrollY]);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
-   useEffect(() => {
-     // Update active link on pathname change
-     setActiveLink(pathname);
-   }, [pathname]);
+  useEffect(() => {
+    // Update active link on pathname change
+    setActiveLink(pathname);
+  }, [pathname]);
 
-   const openMenu = () => setToggle(true);
-   const closeMenu = () => setToggle(false);
+  const openMenu = () => setToggle(true);
+  const closeMenu = () => setToggle(false);
 
   return (
     <nav className="fixed top-0 z-[999] flex flex-col justify-center items-center  w-full  overflow-hidden ">
@@ -288,162 +288,186 @@ const Navbar = ({ openOverlay }) => {
 
             {/* Mobile Menu Toggle */}
             <div className="flex gap-[10px] justify-center items-center silver:hidden cursor-pointer z-[99]">
-              {toggle ? (
-                <AiOutlineClose
-                  onClick={closeMenu}
-                  size={20}
-                  className={
-                    isHomePage || isTheRunPage
-                      ? scrolled
-                        ? "text-[#8D12AB]"
-                        : "text-white"
-                      : "text-[#8D12AB]"
-                  }
-                />
-              ) : (
-                <HiMenuAlt3
-                  onClick={openMenu}
-                  size={30}
-                  className={
-                    isHomePage || isTheRunPage
-                      ? scrolled
-                        ? "text-[#8D12AB]"
-                        : "text-white"
-                      : "text-[#8D12AB]"
-                  }
-                />
-              )}
+              <HiMenuAlt3
+                onClick={openMenu}
+                size={30}
+                className={`${
+                  isHomePage || isTheRunPage
+                    ? scrolled
+                      ? "text-[#8D12AB]"
+                      : "text-white"
+                    : "text-[#8D12AB]"
+                }  ${toggle ? "hidden " : "block"}`}
+              />
             </div>
 
             {/* Mobile Menu */}
             {toggle && (
               <div
-                className={`silver:hidden fixed top-[103px] right-0 flex flex-col items-end justify-start bg-black bg-opacity-90 text-white h-full w-full max-w-[300px] transition-transform duration-500 ease-out transform ${
-                  toggle ? "translate-x-0 " : "-translate-x-full"
+                className={`mobile-menu  silver:hidden fixed top-0 right-0 flex flex-col items-end justify-start  bg-black bg-opacity-90 text-white h-full w-full max-w-[300px] transition-transform transform ${
+                  toggle ? "translate-x-0" : "-translate-x-full"
                 }`}
               >
-                <div className="flex justify-center items-end w-full mt-[10px]">
-                  <ul className="flex flex-col items-end justify-center pl-[20px] text-lg w-full">
-                    <Link
-                      className="!flex !w-full"
-                      to="/"
-                      onClick={() => setActiveLink("/")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD]  border-[1px] border-solid border-[#8D12AB] 
-                          ${activeLink === "/" ? "font-bold" : ""}`}
-                      >
-                        <span className="text-[#05284C] capitalize">home</span>
-                      </li>
+                <div className="flex gap-10 flex-col justify-center items-end w-full mt-[80px]">
+                  <div className="flex justify-between items-center w-full pl-[70px] pr-4">
+                    <Link to="/">
+                      <img
+                        src={logo1}
+                        alt="logo"
+                        className="h-auto z-[999] w-[100.2px] pr-2 border-r-[3px] border-r-[#E2E2E24A] object-contain"
+                      />
                     </Link>
-                    <Link
-                      className="!flex !w-full"
-                      to="/about"
-                      onClick={() => setActiveLink("about")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                    <AiOutlineClose
+                      onClick={closeMenu}
+                      size={20}
+                      className={
+                        isHomePage || isTheRunPage
+                          ? scrolled
+                            ? "text-[#8D12AB]"
+                            : "text-white"
+                          : "text-[#8D12AB]"
+                      }
+                    />
+                  </div>
+                  <ul className="flex gap-2 flex-col items-end justify-center pl-[70px] text-lg w-full">
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/"
+                        onClick={() => setActiveLink("/")}
+                      >
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD]  border-[1px] border-solid border-[#8D12AB] 
+                          ${activeLink === "/" ? "font-bold" : ""}`}
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            home
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/about"
+                        onClick={() => setActiveLink("about")}
+                      >
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
                           ${
                             activeLink === "/about"
                               ? "!font-bold text-[50px]"
                               : ""
                           }`}
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            the run
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/Conference"
+                        onClick={() => setActiveLink("Conference")}
                       >
-                        <span className="text-[#05284C] capitalize">
-                          the run
-                        </span>
-                      </li>
-                    </Link>
-                    <Link
-                      className="!flex !w-full"
-                      to="/Conference"
-                      onClick={() => setActiveLink("Conference")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
                           ${
                             activeLink === "/Conference"
                               ? "!font-bold text-[50px]"
                               : ""
                           }`}
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            Conference
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/news"
+                        onClick={() => setActiveLink("/news")}
                       >
-                        <span className="text-[#05284C] capitalize">
-                          Conference
-                        </span>
-                      </li>
-                    </Link>
-                    <Link
-                      className="!flex !w-full"
-                      to="/news"
-                      onClick={() => setActiveLink("/news")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
                           ${
                             activeLink === "/news"
                               ? "!font-bold text-[50px]"
                               : ""
                           }`}
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            news
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/post-Events"
+                        onClick={() => setActiveLink("post-Events")}
                       >
-                        <span className="text-[#05284C] capitalize">news</span>
-                      </li>
-                    </Link>
-                    <Link
-                      className="!flex !w-full"
-                      to="/post-Events"
-                      onClick={() => setActiveLink("post-Events")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
                           ${
                             activeLink === "/post-Events"
                               ? "!font-bold text-[50px]"
                               : ""
                           }`}
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            post Events
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
+                    <li className="w-full">
+                      <Link
+                        className="!flex !w-full"
+                        to="/volunteer"
+                        onClick={() => setActiveLink("volunteer")}
                       >
-                        <span className="text-[#05284C] capitalize">
-                          post Events
-                        </span>
-                      </li>
-                    </Link>
-                    <Link
-                      className="!flex !w-full"
-                      to="/volunteer"
-                      onClick={() => setActiveLink("volunteer")}
-                    >
-                      <li
-                        onClick={closeMenu}
-                        className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
+                        <div
+                          onClick={closeMenu}
+                          className={`flex justify-end items-start w-full py-[7px] p-[50px] border-soild bg-[#E6EFFD] border-[1px] border-solid border-[#8D12AB] 
                           ${
                             activeLink === "/volunteer"
                               ? "!font-bold text-[50px]"
                               : ""
                           }`}
-                      >
-                        <span className="text-[#05284C] capitalize">
-                          volunteer
-                        </span>
-                      </li>
-                    </Link>
-                  </ul>
-                </div>
+                        >
+                          <span className="text-[#05284C] capitalize">
+                            volunteer
+                          </span>
+                        </div>
+                      </Link>
+                    </li>
 
-                <div className="flex w-full pl-[20px]">
-                  <Button
-                    size="medium"
-                    onClick={() => {
-                      openOverlay();
-                      closeMenu();
-                    }}
-                    className="mt-8 bg-[#8D12AB] text-[#FFFFFF] capitalize"
-                  >
-                    Register
-                  </Button>
+                    <li className="w-full">
+                      <div className="flex w-ful ">
+                        <Button
+                          size="medium"
+                          onClick={() => {
+                            openOverlay();
+                            closeMenu();
+                          }}
+                          className="mt-8 bg-[#8D12AB] text-[#FFFFFF] capitalize"
+                        >
+                          Register
+                        </Button>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
               </div>
             )}

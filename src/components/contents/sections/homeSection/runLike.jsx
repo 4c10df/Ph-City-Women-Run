@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 import Button from "../../Button";
 
-function RunFast() {
+const RunFast = ({ openVolunteerform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -92,6 +92,7 @@ function RunFast() {
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
+                        onClick={openVolunteerform}
                         size="play"
                         className="!bg-[#FFFFFF] !text-[#121F30]"
                       >
@@ -123,6 +124,7 @@ function RunFast() {
                     </h4>
                     <div className="flex justify-start w-full at500:w-[201px]">
                       <Button
+                        onClick={openVolunteerform}
                         size="play"
                         className="!bg-[#FFFFFF] !text-[#121F30]"
                       >

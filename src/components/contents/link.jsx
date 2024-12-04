@@ -24,7 +24,7 @@ const Link = ({ to, children, onClick }) => {
   };
 
   return (
-    <div className={`fade-link   ${loading ? "fade-out" : "fade-in"}`}>
+    <div className={`fade-link ${loading ? "fade-out" : "fade-in"}`}>
       <NavLink to={to} onClick={handleClick}>
         {children}
       </NavLink>

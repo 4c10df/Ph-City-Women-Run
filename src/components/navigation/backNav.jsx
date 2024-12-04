@@ -11,6 +11,7 @@ const BackNav = () => {
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const isAnyPage = pathname.includes("/posts/");
+   const isShopPage = pathname.includes("/shop/");
   const isleaderBoardPage = pathname.includes("/leaderBoards/");
   const isdepartmentPage = pathname.includes("/departments/");
   const isPhotoDetailsPage = pathname.includes("/photos/");
@@ -50,9 +51,23 @@ const BackNav = () => {
           : "bg-[#F9FBFC]"
       }`}
     >
-      <div className="relative flex justify-center items-center w-full auto-container px-[15px] py-[16px] at500:px-[72px] sm:px-[120px] mx-auto">
+      <div className="relative flex justify-start items-center w-full auto-container  py-[16px]  sm:px-[120px] mx-auto">
         <div className="relative w-full flex flex-col at500:flex-row justify-between items-start at500:items-center at500:space-x-4">
-          <ul className="flex justify-end items-center space-x-4">
+          <ul className="flex justify-start items-center space-x-4">
+            <Link className="flex w-full " to="/">
+              <li
+                className={`relative group flex gap-[5px] capitalize items-center group-hover:text-[#8D12AB] py-[10px] pr-[10px] ${
+                  activeLink === "news"
+                    ? "border-b-[4px] border-b-[#8D12AB]"
+                    : ""
+                } ${isShopPage ? "" : "hidden"}`}
+              >
+                <FaArrowLeft className=" relative top-0 text-[#353F50] group-hover:text-[#8D12AB] w-[20px]" />
+                <span className=" text-[#353F50] font-normal text-[14px] leading-[20px] group-hover:text-[#8D12AB]">
+                  Back to Home
+                </span>
+              </li>
+            </Link>
             <Link className="flex w-full " to="/news">
               <li
                 className={`relative group flex gap-[5px] capitalize items-center group-hover:text-[#8D12AB] py-[10px] pr-[10px] ${

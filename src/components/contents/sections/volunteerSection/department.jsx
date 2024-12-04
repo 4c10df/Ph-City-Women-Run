@@ -1,22 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { GoChevronRight } from "react-icons/go";
-import { BsAlarm } from "react-icons/bs";
-import imageOne from "../../image/homeImg/ad392b203979406835370d3e44b10714.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
-// import Link from "./link";
-
-import Button from "../../Button";
-import ScheduleCountdown from "../scheduleCount";
-import { Link } from "react-router-dom";
+import Link from "../../link";
+import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 function Department() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [postLimit, setPostLimit] = useState(6);
+  const [postLimit, setPostLimit] = useState();
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
@@ -70,20 +64,25 @@ function Department() {
   return (
     <>
       <section className=" relative flex flex-col justify-center items-start  h-auto w-full ">
-        <div className="static auto-container flex flex-col justify-center items-center w-full py-[70px] at500:px-[72px] my-0 mx-auto">
-          <div className="grid grid-cols-1 at500:grid-cols-2 sm:grid-cols-3 silver:grid-cols-4 w-full">
+        <div className="static auto-container flex flex-col justify-center items-center w-full py-[70px] px-[15px] at500:px-[72px] my-0 mx-auto">
+          <div className="grid grid-cols-1  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-[28px] gap-x-[16px] w-full">
             {data.slice(0, postLimit).map((department) => (
               <div
-                className="relative flex flex-col justify-end items-end bg-cover px-[20px] sm:px-[20px] py-[20px] h-auto w-full at500:rounded-[24px]"
-                style={{
-                  backgroundImage: `url(${department.coverImage.url})`,
-                  backgroundColor: "#00000099",
-                  backgroundBlendMode: "multiply",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                }}
+                key={department.id}
+                className="relative bg-[#5C176F] flex gap-10 flex-col justify-start items-start px-[20px] sm:px-[20px] py-[20px] min-h-[295px] w-full rounded-[24px] overflow-hidden"
               >
-                <div className="relative flex gap-[20px]  justify-between items-end w-full  h-auto sm:h-[320px] ">
+                <div className=" absolute flex justify-start items-start bottom-[-4px]  w-full auto-container ">
+                  <span className=" w-[200px] h-[367px] relative top-[-61px] left-[44px]  flex shape15 "></span>
+                </div>
+                <div className="relative py-[20px] flex justify-center items-center max-w-[120px] max-h-[120px]">
+                  <LoadBlurHashImage
+                    src={department.coverImage.url}
+                    blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash if available
+                    alt="icon"
+                    className="w-full h-auto  object-cover mb-3"
+                  />
+                </div>
+                <div className="relative flex gap-[20px]  justify-between items-end w-full  h-auto ">
                   <h4 className="text-white !font-[146] leading-[24px] sm:leading-[32px] sm:text-[22px] ">
                     {department.title}
                   </h4>

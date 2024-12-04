@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BsAlarm } from "react-icons/bs";
-import imageOne from "../../image/homeImg/d77978a2e5ff892c935ba1afb6e31a5e.jpeg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -9,7 +8,7 @@ import "aos/dist/aos.css";
 
 import Button from "../../Button";
 
-function HeroSection() {
+const HeroSection = ({ openConferenceform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -89,7 +88,7 @@ function HeroSection() {
                 </div>
               </div>
               <div className="flex justify-start w-full at500:w-[201px]">
-                <Button size="play" className="">
+                <Button onClick={openConferenceform} size="play" className="">
                   Register
                 </Button>
               </div>
@@ -99,6 +98,6 @@ function HeroSection() {
       </section>
     </>
   );
-}
+};
 
 export default HeroSection;

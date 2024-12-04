@@ -3,7 +3,7 @@ import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, A11y } from "swiper/modules";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-
+import { Link } from "react-router-dom";
 import LoadBlurHashImage from "../lazy/loadBlurHash";
 import Button from "../contents/Button";
 import Loading from "../contents/APIs/loading";
@@ -14,19 +14,21 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const ShirtSlider = () => {
-    const [shopData, setShopData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
-    const [shopLimit, setShopLimit] = useState(4); // Set initial limit to 4 items
+  const [shopData, setShopData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [shopLimit, setShopLimit] = useState(4); // Set initial limit to 4 items
 
-    const hygraphEndpoint =
-      "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
+  
+  const hygraphEndpoint =
+    "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
-    const query = `
+  const query = `
     query MyQuery {
       shops {
         id
         price
+        slug
         title
         subtitle
         productName
@@ -40,23 +42,23 @@ const ShirtSlider = () => {
     }
   `;
 
-    useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const response = await axios.post(hygraphEndpoint, { query });
-          setShopData(response.data.data.shops);
-          setLoading(false);
-        } catch (err) {
-          setError(err);
-          setLoading(false);
-        }
-      };
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(hygraphEndpoint, { query });
+        setShopData(response.data.data.shops);
+        setLoading(false);
+      } catch (err) {
+        setError(err);
+        setLoading(false);
+      }
+    };
 
-      fetchData();
-    }, []);
+    fetchData();
+  }, []);
 
-    if (loading) return <Loading />;
-    if (error) return <p>Error fetching data</p>;
+  if (loading) return <Loading />;
+  if (error) return <p>Error fetching data</p>;
   return (
     <section className="flex flex-col justify-center items-center relative w-full">
       <div className="blog-container w-full flex flex-col justify-center items-center">
@@ -119,9 +121,17 @@ const ShirtSlider = () => {
                   <span className="font-bold text-[15px] text-[#262D33] leading-[22.5px]">
                     {shop.title}
                   </span>
-                  <Button size="play" className="!bg-[#262D33]">
-                    <span className="z-20">{shop.buttonText}</span>
-                  </Button>
+
+               
+
+                  <Link className="block w-full h-full" to={`/shop/${shop.slug}`}>
+                    <Button
+                      size="play"
+                      className="  !bg-[#262D33] "
+                    >
+                      <span className="z-20">{shop.buttonText}</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

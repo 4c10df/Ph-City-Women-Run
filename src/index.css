@@ -17,6 +17,15 @@ body {
 .auto-container{
   max-width: 1580px;
 }
+.mobile-menu {
+  transition: transform 0.5s ease-in-out;
+}
+.mobile-menu.open {
+  transform: translateX(0);
+}
+.mobile-menu.closed {
+  transform: translateX(100%);
+}
 .custom-blur-shadow {
 background: linear-gradient(160.22deg, rgba(255, 255, 255, 0.4) 5.08%, rgba(255, 255, 255, 0.1) 105.52%),
     linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),

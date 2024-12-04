@@ -7,7 +7,6 @@ import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Button from "../../Button";
-import background from "../../image/logo/af9f2983ca064a6bc0b8dd03a1b542df.png";
 import background2 from "../../image/logo/PH CITY WOMEN RUN BRAND LOGO  221.png";
 
 function YourPotential() {

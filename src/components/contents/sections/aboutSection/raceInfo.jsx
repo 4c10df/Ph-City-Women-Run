@@ -10,7 +10,7 @@ import icon5 from "../../image/icons/security-open-access-unlock-svgrepo-com.png
 import location from "../../image/logo/route-svgrepo-com 21.png";
 import shape1 from "../../image/logo/af9f2983ca064a6bc0b8dd03a1b542df.png";
 import shape2 from "../../image/shapes/Frame 1686560676.png";
-
+import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import LoadBlurHashImage from "../../../lazy/loadBlurHash";
@@ -18,7 +18,7 @@ import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 import Button from "../../Button";
 
-function RaceInfo() {
+const RaceInfo = ({ openConferenceform }) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -106,16 +106,30 @@ function RaceInfo() {
             </h2>
             <div className="flex gap-[30px] flex-col silver:flex-row justify-between items-start w-full">
               <div className="flex flex-col justify-center items-start w-full max-w-[527px]">
-                <h4 className="!text-[25px] !font-bold text-[#5C176F] !leading-[24px] sm:!leading-[54px] sm:text-[40px] ">
+                <h4
+                  data-aos="fade-right"
+                  className="!text-[25px] !font-bold text-[#5C176F] !leading-[24px] sm:!leading-[54px] sm:text-[40px] "
+                >
                   {data.raceInfo}
                 </h4>
-                <span className="text-[16px] font-[106] text-[#4E5A6C] leading-[19.84px] max-w-[357px]">
+                <span
+                  data-aos="fade-right"
+                  data-aos-delay="1000"
+                  data-aos-duration="2000"
+                  className="text-[16px] font-[106] text-[#4E5A6C] leading-[19.84px] max-w-[357px]"
+                >
                   {data.subtext5}
                 </span>
               </div>
               <div className="flex justify-center items-start w-full max-w-[643px]">
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-5 items-start silver:pr-[20px] w-full">
-                  <li className="flex flex-col gap-[8px] justify-center items-start">
+                  <li
+                    data-aos="fade-left"
+                    data-aos-delay="100"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out"
+                    className="flex flex-col gap-[8px] justify-center items-start"
+                  >
                     <div className="flex gap-[10px] justify-center items-center">
                       <BsAlarm size={24} className="text-[#203749]" />
                       <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -126,7 +140,13 @@ function RaceInfo() {
                       {data.startTime}
                     </span>
                   </li>
-                  <li className="flex flex-col gap-[8px] justify-center  items-start">
+                  <li
+                    data-aos="fade-left"
+                    data-aos-delay="200"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out"
+                    className="flex flex-col gap-[8px] justify-center  items-start"
+                  >
                     <div className="flex gap-[10px] justify-center items-center">
                       <img className="w-[24px] h-auto" src={location} alt="" />
                       <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -137,7 +157,13 @@ function RaceInfo() {
                       {data.location}
                     </span>
                   </li>
-                  <li className="flex flex-col gap-[8px] justify-center  items-start">
+                  <li
+                    data-aos="fade-left"
+                    data-aos-delay="2000"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out"
+                    className="flex flex-col gap-[8px] justify-center  items-start"
+                  >
                     <div className="flex gap-[10px] justify-center items-center">
                       <img className="w-[24px] h-auto" src={location} alt="" />
                       <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -148,7 +174,13 @@ function RaceInfo() {
                       {data.startingPoint}
                     </span>
                   </li>
-                  <li className="flex flex-col gap-[8px] justify-center  items-start">
+                  <li
+                    data-aos="fade-left"
+                    data-aos-delay="3000"
+                    data-aos-duration="2000"
+                    data-aos-easing="ease-in-out"
+                    className="flex flex-col gap-[8px] justify-center  items-start"
+                  >
                     <div className="flex gap-[10px] justify-center items-center">
                       <img className="w-[24px] h-auto" src={location} alt="" />
                       <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -166,7 +198,11 @@ function RaceInfo() {
           <div className="flex gap-[30px] flex-col-reverse silver:flex-row justify-between items-start  w-full">
             <div className="flex gap-[20px] flex-col justify-start items-start w-full max-w-[527px]">
               <ul className="flex gap-[20px] flex-col justify-between items-start w-full">
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center items-start  ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center items-start  "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <img className="w-[24px] h-auto" src={icon1} alt="" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold ">
@@ -177,7 +213,11 @@ function RaceInfo() {
                     {data.subtitle2}
                   </span>
                 </li>
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <FaBottleWater size={24} className="text-[#A93439]" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -188,7 +228,11 @@ function RaceInfo() {
                     {data.subtitle1}
                   </span>
                 </li>
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <img className="w-[24px] h-auto" src={icon2} alt="" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -199,7 +243,11 @@ function RaceInfo() {
                     {data.subtext4}
                   </span>
                 </li>
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <img className="w-[24px] h-auto" src={icon3} alt="" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -210,7 +258,11 @@ function RaceInfo() {
                     {data.subtitle3}
                   </span>
                 </li>
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <img className="w-[24px] h-auto" src={icon4} alt="" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -221,7 +273,11 @@ function RaceInfo() {
                     {data.subtext2}
                   </span>
                 </li>
-                <li className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start ">
+                <li
+                  data-aos="fade-up"
+                  data-aos-duration="2000"
+                  className="flex flex-col at1098:flex-row gap-[20px] justify-center  items-start "
+                >
                   <div className="flex gap-[8px] justify-start items-start at1098:w-[126px]">
                     <img className="w-[24px] h-auto" src={icon5} alt="" />
                     <span className="text-[#5C176F] text-[16px] leading-[24px] font-bold">
@@ -234,21 +290,32 @@ function RaceInfo() {
                 </li>
               </ul>
 
-              <div className="flex flex-col at500:flex-row gap-[24px] justify-between items-center w-full max-w-[426px]">
+              <div
+                data-aos="fade-up"
+                className="flex flex-col at500:flex-row gap-[24px] justify-between items-center w-full max-w-[426px]"
+              >
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button size="large" className="  !text-[#121F30]">
-                    Preorder Shirts
-                  </Button>
+                  <Link className="block w-full h-full" to={"/"}>
+                    <Button size="large" className="  !text-[#121F30]">
+                      Preorder Shirts
+                    </Button>
+                  </Link>
                 </div>
                 <div className="flex justify-start w-full at500:w-[201px]">
-                  <Button size="play" className="">
+                  <Button onClick={openConferenceform} size="play" className="">
                     Register Now
                   </Button>
                 </div>
               </div>
             </div>
 
-            <div className="flex justify-end items-end w-full h-auto silver:max-w-[643px]">
+            <div
+              data-aos="fade-left"
+              data-aos-delay="1000"
+              data-aos-duration="30000"
+              data-aos-easing="ease-in-out"
+              className="flex justify-end items-end w-full h-auto silver:max-w-[643px]"
+            >
               <LoadBlurHashImage
                 src={data.image1.url}
                 blurHash="LEHV6nWB2yk8pyo0adR*.7kCMdnj" // Replace with actual blurhash
