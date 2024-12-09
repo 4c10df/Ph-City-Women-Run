@@ -133,22 +133,22 @@ function footer() {
             {/* <!--hr line--> */}
             <hr className="h-[2px] w-full bg-[#111E2F]" />
             {/* <!--copyright--> */}
-            <div
-              data-aos="fade-up"
-              className="flex flex-col gap-[6px] justify-start items-start w-full h-auto mt-[30px] "
+            <ul
+              
+              className="flex flex-col gap-[6px] justify-start items-start w-full h-auto my-[30px] "
             >
-              <div className="flex w-full ">
+              <li className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">
                   © {currentYear} PH City Women Run. All rights reserved.
                 </p>
-              </div>
-              <div className="flex w-full ">
+              </li>
+              <li className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">
                   PH City Women Run, the PH City Women Run logo, PHCWR, are
                   trademarks owned by Rapids Sports and Entertainment Limited
                 </p>
-              </div>
-            </div>
+              </li>
+            </ul>
           </div>
         </div>
         <div className=" absolute flex justify-end items-end bottom-[-4px] w-full auto-container">

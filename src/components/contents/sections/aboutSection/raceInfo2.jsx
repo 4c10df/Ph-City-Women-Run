@@ -27,7 +27,7 @@ const RaceInfo10km = ({ openOverlay }) => {
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
   const query = `{
-  theRun(where: {id: "cm35fdo150emx07obcc2bggxd"}) {
+  theRun(where: {id: "cm4hbzd7o1x1307o3gecewi9c"}) {
     id
     nameOfSection
     raceInfo
@@ -280,7 +280,7 @@ const RaceInfo10km = ({ openOverlay }) => {
                     </span>
                   </div>
                   <span className="text-[#353F50]  text-[16px] leading-[19.84px] font-[106] max-w-[357px]">
-                    {data.subtext4}
+                    {data.subtitle4}
                   </span>
                 </li>
               </ul>

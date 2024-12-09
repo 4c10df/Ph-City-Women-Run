@@ -38,7 +38,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
 
   return (
     <div
-      className="overlay1 z-[88] relative flex flex-col justify-end items-end bg-cover px-[20px] sm:px-[20px] py-[20px] h-auto w-full at500:rounded-[24px]"
+      className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
       style={{
         backgroundImage: `url(${Image})`,
         backgroundColor: "#000000CC",
@@ -50,11 +50,11 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
     >
       <AiOutlineClose
         onClick={closeOverlay}
-        size={20}
+        size={30}
         className=" absolute top-5 right-10 text-[#FFFFFF] cursor-pointer"
       />
-      <div className="flex justify-center items-center  px-[15px] py-[70px] md:px-[200px] my-0 mx-auto  w-full h-auto ">
-        <div className="form-container !pt-[40px] !px-[50px]">
+      <div className="flex justify-center items-center py-[70px]  my-0 mx-auto  w-full h-auto ">
+        <div className="form-container !pt-[40px] silver:!px-[50px]">
           <div className="flex justify-between items-center w-full  ">
             <div className="flex flex-col justify-center items-center w-full">
               <h2 className=" sm:text-[40px] leading-[52px] text-[#FFFFFF] !font-[176]">
@@ -71,7 +71,7 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
                 <div className="flex flex-col at500:flex-row justify-center items-center at500:space-x-3 w-full">
                   <div className="w-full">
                     <label>
-                      Select Shirt Size <em style={{ color: "red" }}>*</em>
+                      Select Run Category <em style={{ color: "red" }}>*</em>
                     </label>
                     <select
                       name="shirtSize"

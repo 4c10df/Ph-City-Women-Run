@@ -2,32 +2,38 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import Button from "../../Button";
 
-function RouteMap() {
+function RouteMap({ id }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState(false);
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
-  const query = `{
-  theRun(where: {id: "cm2xc6ibs0mtc07pggca1ta4f"}) {
-    id
-    nameOfSection
-    
-  }
-}`;
+  const query = `
+    query {
+      theRun(where: {id: "cm2xc6ibs0mtc07pggca1ta4f"}) {
+        id
+        nameOfSection
+      }
+    }
+  `;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.post(hygraphEndpoint, { query });
-        setData(response.data.data.theRun);
-        setLoading(false);
+        const result = response.data?.data?.theRun;
+        if (result) {
+          setData(result);
+        } else {
+          throw new Error("Data not found");
+        }
       } catch (err) {
-        setError(err);
+        console.error("Error fetching data:", err.message);
+        setError(true);
+      } finally {
         setLoading(false);
       }
     };
@@ -39,19 +45,29 @@ function RouteMap() {
     AOS.init({ duration: 2000, once: true });
   }, []);
 
-  if (loading)
+  if (loading) {
     return (
-      <p className="h-[20vh] w-full custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white"></p>
-    );
-  if (error)
-    return (
-      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
-        Let's get you back online
+      <p className="h-[20vh] flex justify-center items-center text-[20px] text-white">
+        Loading...
       </p>
     );
+  }
+
+  if (error) {
+    return (
+      <p className="h-[30vh] flex justify-center items-center text-[20px] text-white">
+        Unable to fetch data. Please try again later.
+      </p>
+    );
+  }
+
   return (
-    <section className="relative flex flex-col justify-center items-center  bg-[#EDF5FD] h-auto w-full overflow-hidden">
-      <div className="static flex flex-col justify-center items-center w-full h-auto ">
+    <section
+      id={id}
+      className="relative flex flex-col justify-center items-center bg-[#EDF5FD] h-auto w-full overflow-hidden"
+    >
+      <div className="static flex flex-col justify-center items-center w-full h-auto">
+       
         <iframe
           title="Google Map"
           className="w-full h-[70vh]"

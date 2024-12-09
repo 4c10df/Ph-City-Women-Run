@@ -74,11 +74,11 @@ const  LatestBlogs = () => {
 
   if (loading)
     return (
-      <p className="h-[20vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white"></p>
+      <p className="h-[20vh] flex   justify-center items-center leading-tight text-[20px] text-black"></p>
     );
   if (error)
     return (
-      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] flex  justify-center items-center leading-tight text-[20px] text-black">
         Let's get you back online
       </p>
     );

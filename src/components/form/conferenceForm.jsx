@@ -39,7 +39,7 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
 
   return (
     <div
-      className="overlay1 z-[88] relative flex flex-col justify-end items-end bg-cover px-[20px] sm:px-[20px] py-[20px] h-auto w-full at500:rounded-[24px]"
+      className="overlay1  relative flex flex-col justify-end items-end bg-cover px-[15px] sm:px-[20px] silver:px-[200px] py-[20px] h-auto w-full  overflow-hidden"
       style={{
         backgroundImage: `url(${Image})`,
         backgroundColor: "#000000CC",
@@ -51,18 +51,18 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
     >
       <AiOutlineClose
         onClick={closeConferenceform}
-        size={20}
+        size={30}
         className=" absolute top-5 right-10 text-[#FFFFFF] cursor-pointer"
       />
-      <div className="flex justify-center items-center  px-[15px] py-[70px] md:px-[200px] my-0 mx-auto  w-full h-auto ">
-        <div className="form-container !pt-[40px] !px-[50px]">
+      <div className="flex justify-center items-center py-[70px]  my-0 mx-auto  w-full h-auto">
+        <div className="form-container !pt-[40px] silver:!px-[50px]">
           <div className="flex justify-between items-center w-full  ">
             <div className="flex flex-col justify-center items-center w-full">
               <h2 className=" sm:text-[40px] leading-[52px] text-[#FFFFFF] !font-[176]">
-                Come Speak with us
+                Conference Registration Form
               </h2>
               <p className="text-[16px] text-[#101828] ">
-                Register to get Started and participate
+                Register to Participate
               </p>
             </div>
           </div>
@@ -212,10 +212,8 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
                       required
                     >
                       <option value="">Select </option>
-                      <option value="small">LinkedIn</option>
+                      <option value="small">socail</option>
                       <option value="medium">from a friend</option>
-                      <option value="large">facebook</option>
-                      <option value="x-large">instagram</option>
                     </select>
                   </div>
                 </div>

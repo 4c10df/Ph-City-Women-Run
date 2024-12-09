@@ -60,7 +60,7 @@ const Requirements = () => {
     <section className="flex flex-col justify-center items-center relative bg-[#F9FBFC] rounded-[16px] w-full">
       <div className="static z-30 gap-[30px] auto-container flex flex-col justify-center items-start w-full px-[15px] py-[90px] at500:px-[72px] my-0 mx-auto">
         <div className="flex bg-[#5C176F] justify-start items-start lg:w-[380px] px-[24px] py-[10px] rounded-r-[12px]">
-          <h2 className="text-white text-[20px] !leading-[24px] sm:!leading-[32px] sm:!text-[24px]">
+          <h2 className="text-white uppercase text-[20px] !leading-[24px] sm:!leading-[32px] sm:!text-[24px]">
             {data.title}
           </h2>
         </div>

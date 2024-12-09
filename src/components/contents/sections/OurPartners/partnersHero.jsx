@@ -7,8 +7,9 @@ import "aos/dist/aos.css";
 // import Link from "./link";
 
 import Button from "../../Button";
+import { Link } from "react-router-dom";
 
-const PartnerHeroSection = ({ openConferenceform }) => {
+const PartnerHeroSection = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -79,9 +80,12 @@ const PartnerHeroSection = ({ openConferenceform }) => {
                 {data.subtitle1}
               </span>
               <div className="flex justify-start w-full at500:w-[201px] mt-[20px]">
-                <Button onClick={openConferenceform} size="play" className="">
-                  Become a Partner
-                </Button>
+                <Link to={"/contact"} className="w-full">
+                  
+                  <Button size="play" className="">
+                    Become a Partner
+                  </Button>
+                </Link>
               </div>
             </div>
           </div>

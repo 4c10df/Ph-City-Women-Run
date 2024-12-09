@@ -10,25 +10,18 @@ import ConferenceForm from "../form/conferenceForm";
 
 function Partners() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenConferenceform, setIsOpenConferenceform] = useState(false);
   const openOverlay = () => setIsOpen(true);
   const closeOverlay = () => setIsOpen(false);
-  const openConferenceform = () => setIsOpenConferenceform(true);
-  const closeConferenceform = () => setIsOpenConferenceform(false);
+
 
   return (
     <>
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
-        <ConferenceForm
-          isOpenConferenceform={isOpenConferenceform}
-          closeConferenceform={closeConferenceform}
-        />
         <ConferenecNav />
-        <PartnerHeroSection openConferenceform={openConferenceform} />
+        <PartnerHeroSection />
         <PartnersSection />
-
         <Footer />
       </div>
     </>

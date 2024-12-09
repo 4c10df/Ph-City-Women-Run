@@ -63,7 +63,7 @@ function OurPartners() {
     <>
       <section className="relative bg-[#F9FBFC] flex justify-center items-center w-full h-auto sm:h-[342px] overflow-hidden">
         <div className="static gap-[24px] flex flex-col justify-center items-center w-full max-w-[1280px] px-[15px] py-[90px] at500:px-[72px] my-0 mx-auto">
-          <h4 className=" text-[#111E2F] !leading-[52px]">Our Sponsors</h4>
+          <h4 className=" text-[#111E2F] !leading-[52px]"> Partners</h4>
           <div className=" flex flex-col sm:flex-row justify-center items-center w-full gap-[24px]">
             {data.slice(0, postLimit).map((ourPartners) => (
               <div

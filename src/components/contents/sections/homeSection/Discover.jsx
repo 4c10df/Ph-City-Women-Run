@@ -123,7 +123,7 @@ function YourPotential() {
                   {data.subtitle2}
                 </span>
                 <div className="flex justify-center w-[225px]">
-                  <Link className="w-full" to={"/about"}>
+                  <Link className="w-full" to="/about#route-map">
                     <Button size="medium" className="bg-white text-[#0A1D33]">
                       Learn about the Route
                     </Button>

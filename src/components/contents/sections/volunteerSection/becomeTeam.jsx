@@ -8,7 +8,7 @@ import LoadBlurHashImage from "../../../lazy/loadBlurHash";
 
 import Button from "../../Button";
 
-function BecomeAteam() {
+function BecomeAteam({ openVolunteerform }) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -78,7 +78,11 @@ function BecomeAteam() {
                   data-aos="zoom-in"
                   className="flex justify-start w-full at500:w-[201px] z-40"
                 >
-                  <Button size="play" className="!bg-[#5C176F]">
+                  <Button
+                    onClick={openVolunteerform}
+                    size="play"
+                    className="!bg-[#5C176F]"
+                  >
                     Register Now
                   </Button>
                 </div>

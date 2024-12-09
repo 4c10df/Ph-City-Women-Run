@@ -79,11 +79,10 @@ function LatestNews() {
           <img className="w-full object-cover h-full" src={shape2} alt="" />
           <div className="absolute flex gap-[20px] flex-col justify-center items-center w-full px-[15px]">
             <span className="text-[#FFFFFF] text-center !text-[20px] at500:!text-[40px] txt9">
-              GET THE LATEST NEWS
+              Subscribe to get the latest
             </span>
             <p className="font-Galano text-[16px] text-center text-[#FFFFFF] leading-[24px]">
-              In the event you have any questions, kindly reach out to us and we
-              will have this worked out for you.
+              information about the running event, conference and more
             </p>
             <form
               // onSubmit={handleSubmit}

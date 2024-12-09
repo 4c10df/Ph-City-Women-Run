@@ -29,7 +29,7 @@ function Volunteer() {
         />
         <VolunNav />
         <VolunSection openVolunteerform={openVolunteerform} />
-        <BecomeAteam />
+        <BecomeAteam openVolunteerform={openVolunteerform} />
         <Benefits />
         <DepartmentSlider />
         <Requirements />

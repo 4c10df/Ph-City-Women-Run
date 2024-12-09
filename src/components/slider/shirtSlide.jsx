@@ -19,7 +19,6 @@ const ShirtSlider = () => {
   const [error, setError] = useState(null);
   const [shopLimit, setShopLimit] = useState(4); // Set initial limit to 4 items
 
-  
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
 
@@ -30,6 +29,9 @@ const ShirtSlider = () => {
         price
         slug
         title
+        discountTextBackground {
+          hex
+        }
         subtitle
         productName
         productImage {
@@ -113,7 +115,12 @@ const ShirtSlider = () => {
                       </p>
                     </li>
                     <li>
-                      <span className="bg-[#37B553] font-semibold text-[10px] text-[#FFFFFF] leading-[15px] p-1 rounded-[2px]">
+                      <span
+                        // style={{
+                        //   backgroundColor: shop.discountTextBackground.hex,
+                        // }}
+                        className=" font-semibold text-[10px] text-[#FFFFFF] leading-[15px] p-1 rounded-[2px]"
+                      >
                         {shop.discount}
                       </span>
                     </li>
@@ -122,13 +129,11 @@ const ShirtSlider = () => {
                     {shop.title}
                   </span>
 
-               
-
-                  <Link className="block w-full h-full" to={`/shop/${shop.slug}`}>
-                    <Button
-                      size="play"
-                      className="  !bg-[#262D33] "
-                    >
+                  <Link
+                    className="block w-full h-full"
+                    to={`/shop/${shop.slug}`}
+                  >
+                    <Button size="play" className="  !bg-[#262D33] ">
                       <span className="z-20">{shop.buttonText}</span>
                     </Button>
                   </Link>

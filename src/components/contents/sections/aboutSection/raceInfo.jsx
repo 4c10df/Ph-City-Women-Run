@@ -100,7 +100,7 @@ const RaceInfo = ({ openOverlay }) => {
         <div className="static z-20 auto-container flex flex-col justify-center items-center w-full px-[15px] py-[20px] at500:px-[40px] md:px-[72px] silver:pl-[72px] silver:pr-0 my-0 mx-auto">
           <div className="flex gap-[40px] flex-col justify-center items-start w-full mb-[50px]">
             <h2 className="text-[#111E2F] !text-[30px] !leading-[24px] sm:!leading-[54px] sm:text-[40px]">
-              {data.nameOfSection}
+              Race Information
             </h2>
             <div className="flex gap-[30px] flex-col silver:flex-row justify-between items-start w-full">
               <div className="flex flex-col justify-center items-start w-full max-w-[527px]">
@@ -283,7 +283,7 @@ const RaceInfo = ({ openOverlay }) => {
                     </span>
                   </div>
                   <span className="text-[#353F50]  text-[16px] leading-[19.84px] font-[106] max-w-[357px]">
-                    {data.subtext4}
+                    {data.subtitle4}
                   </span>
                 </li>
               </ul>

@@ -31,6 +31,9 @@ const PurchaseShirt = () => {
         productImage {
           url
         }
+          discountTextBackground2 {
+          hex
+        }
         formerPrice
         discount
         buttonText
@@ -70,6 +73,8 @@ const PurchaseShirt = () => {
     setSelectedSize(e.target.value);
   };
 
+ 
+
   return (
     <section className="relative pt-[100px] flex flex-col items-center w-full h-auto overflow-hidden">
       <div className="static z-30 auto-container flex flex-col justify-center items-start w-full pt-[150px] pb-[50px] px-[20px] at500:px-[72px] my-0 mx-auto">
@@ -104,7 +109,12 @@ const PurchaseShirt = () => {
                   <p className="text-[16px] line-through text-[#E50000] leading-[24px]">
                     {post.formerPrice}
                   </p>
-                  <span className="font-semibold text-[10px] text-[#E50000] leading-[15px] ">
+                  <span
+                    // style={{
+                    //   color: post.discountTextBackground2.hex
+                    // }}
+                    className="font-semibold text-[10px] text-white leading-[15px] "
+                  >
                     ( {post.discount} )
                   </span>
                 </div>
@@ -159,11 +169,13 @@ const PurchaseShirt = () => {
               <span className="text-[#000000] text-[20px] leading-[24px]">
                 Pick Up Information
               </span>
-              <span className="flex gap-2 text-[#4B4B4B] text-[18px] leading-[24px]">
-                <GoTag size={45} />
-                You can only pick up at rumodara from Monday to Friday at 9:00am
-                - 6pm
-              </span>
+              <div className="flex justify-start items-start gap-2 w-full">
+                <GoTag  className="text-[#4B4B4B] text-[30px]" />
+                <span className=" text-[#4B4B4B] text-[14px] leading-[24px]">
+                  You will be updated with information for pick-up of running
+                  shirts via email and/or our social media channels
+                </span>
+              </div>
             </div>
           </div>
         </div>

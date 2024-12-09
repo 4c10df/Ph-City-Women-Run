@@ -75,21 +75,7 @@ function PartnersSection() {
                 )}
               </div>
             ))}
-            {/* <img
-              className="h-[64px] w-[54.36px] object-contain"
-              src={logoTwo}
-              alt=""
-            />
-            <img
-              className="h-[64px] w-[130.03px] object-contain"
-              src={logoThree}
-              alt=""
-            />
-            <img
-              className="h-[56px] w-[253.73px] object-contain"
-              src={logofour}
-              alt=""
-            /> */}
+           
           </div>
 
           <img

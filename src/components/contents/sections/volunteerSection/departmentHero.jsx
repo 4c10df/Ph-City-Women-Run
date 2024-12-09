@@ -86,11 +86,9 @@ const Volundepartment = ({ openVolunteerform }) => {
               </div>
 
               <div className="flex justify-start w-full at500:w-[201px]">
-       
-                  <Button onClick={openVolunteerform} size="play" className="">
-                    Volunteer Now
-                  </Button>
-               
+                <Button onClick={openVolunteerform} size="play" className="">
+                  Register Now
+                </Button>
               </div>
             </div>
           </div>
