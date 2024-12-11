@@ -81,7 +81,7 @@ function Prize() {
     );
   if (error)
     return (
-      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] flex custom-blur-shadow  justify-center items-center leading-tight text-[20px] text-white w-full">
         Let's get you back online
       </p>
     );

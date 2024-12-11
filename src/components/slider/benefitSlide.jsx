@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, A11y } from "swiper/modules";
+import { Navigation, Pagination, A11y, Autoplay } from "swiper/modules";
 import { GoChevronLeft, GoChevronRight } from "react-icons/go";
-
-import LoadBlurHashImage from "../lazy/loadBlurHash";
-import Button from "../contents/Button";
-import Loading from "../contents/APIs/loading";
 import "swiper/css";
 import "./swiper/benefit.css";
 import "./swiper/pagination.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import shape1 from "../slider/shapes/shape1.png";
+import background from "../contents/image/logo/af9f2983ca064a6bc0b8dd03a1b542df.png";
 
 const BenefitSlider = () => {
   const [data, setData] = useState(null);
@@ -23,14 +21,9 @@ const BenefitSlider = () => {
 
   const query = `{
      volunteer(where: {id: "cm3fmdf901fir07o61geldecy"}) {
-    title
-    subtitle
-    subtext
-    schedule
+    
     slideText
-    coverImage {
-      url
-    }
+   
   }
 }`;
 
@@ -65,27 +58,32 @@ const BenefitSlider = () => {
     );
 
   return (
-    <section className="flex flex-col justify-center items-center relative bg-[#F9FBFC] rounded-[16px] w-full">
-      <div className="blog-container w-full flex flex-col justify-center items-center max-w-[341px] h-[373px]">
-        <GoChevronLeft className="swiper-button-prev-text !hidden at500:!flex left-[0px] w-[20px] z-50" />
-        <GoChevronRight className="swiper-button-next-text !hidden at500:!flex right-[0px] w-[20px] z-50" />
+    <section className="flex flex-col justify-center items-center relative bg-[#AF228CB3] rounded-[16px] w-full overflow-hidden">
+      <div className="blog-container w-full flex flex-col justify-center items-center lg:max-w-[400px] h-auto lg:h-[373px] px-[20px] py-[20px] lg:py-[0px]">
+        <GoChevronLeft className="swiper-button-prev-text !hidden group-hover:!block left-[0px] w-[20px] z-50" />
+        <GoChevronRight className="swiper-button-next-text !hidden group-hover:!block right-[0px] w-[20px] z-50" />
 
         <Swiper
           className="relative flex flex-col justify-center items-center sm:!py-[30px] w-full"
           style={{ width: "100%" }}
-          modules={[Navigation, Pagination, A11y]}
+          modules={[Navigation, Pagination, A11y, Autoplay]}
           spaceBetween={10}
           slidesPerView={1}
+          loop={true} // Enable loop
+          autoplay={{
+            delay: 3000, // Adjust delay in milliseconds (3 seconds)
+            disableOnInteraction: false, // Continue autoplay after user interaction
+          }}
           navigation={{
             nextEl: ".swiper-button-next-text",
             prevEl: ".swiper-button-prev-text",
           }}
         >
           {data.slideText.map((text, index) => (
-            <SwiperSlide key={index} className="z-[4]">
+            <SwiperSlide key={index} className="z-[4] ">
               <div className="flex gap-[15px] flex-col justify-center items-center w-full overflow-hidden">
-                <div className="flex gap-[10px] flex-col justify-center items-start pb-[16px]">
-                  <span className="font-semibold text-[#262D33] leading-[32px] text-[24px] sm:leading-[52px] sm:text-[45px]">
+                <div className="flex gap-[10px] flex-col justify-center items-start ">
+                  <span className="font-semibold text-white leading-[32px] text-center silver:text-left text-[30px] sm:leading-[52px] sm:text-[40px] silver:text-[45px]">
                     {text}
                   </span>
                 </div>
@@ -93,6 +91,16 @@ const BenefitSlider = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+      </div>
+      <div className="h-[320px] absolute bottom-[-48px] left-[-42px] z-0">
+        <img
+          className=" w-full object-cover z-0"
+          src={shape1}
+          alt="background"
+        />
+      </div>
+      <div className=" absolute flex justify-start items-start bottom-[-4px]  w-full auto-container ">
+        <span className=" w-[200px] h-[367px] relative left-[95px]  flex shape13 "></span>
       </div>
     </section>
   );

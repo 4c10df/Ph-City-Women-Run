@@ -60,7 +60,7 @@ function DayToExplore() {
     );
 
   return (
-    <section className="relative flex flex-col justify-center items-center  bg-[#203749]   w-full overflow-hidden">
+    <section className="relative flex flex-col justify-center items-center  bg-[#000]   w-full overflow-hidden">
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[20px] at500:px-[72px] my-0 mx-auto">
         <h6 className=" !text-[20px] text-[#F9FBFC] leading-[24px]">
           {data.subtitle1}

@@ -97,11 +97,11 @@ function YourPotential() {
               <div className="absolute bottom-0 flex flex-col gap-[10px] sm:gap-[22px] p-[30px]">
                 <h5 className="text-white">{data.title1}</h5>
                 <span className="text-white">{data.subtitle1}</span>
-                <div className="flex justify-center w-[140px]">
+                {/* <div className="flex justify-center w-[140px]">
                   <Button size="small" className="">
                     Learn More
                   </Button>
-                </div>
+                </div> */}
               </div>
             </div>
             <div

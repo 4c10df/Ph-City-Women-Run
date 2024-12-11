@@ -58,11 +58,9 @@ const SaveUrPotForm = ({ isOpen, closeOverlay }) => {
           <div className="flex justify-between items-center w-full  ">
             <div className="flex flex-col justify-center items-center w-full">
               <h2 className=" sm:text-[40px] leading-[52px] text-[#FFFFFF] !font-[176]">
-                We Saved You A Spot
+                The Run Registration Form
               </h2>
-              <p className="text-[16px] text-[#101828] ">
-                Register to get Started and participate
-              </p>
+              <p className="text-[16px] text-[#101828] ">Register to Run</p>
             </div>
           </div>
           <div className="flex flex-col gap-[20px] w-full">

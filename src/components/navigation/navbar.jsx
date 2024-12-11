@@ -64,9 +64,9 @@ const Navbar = ({ openOverlay }) => {
                 </li>
               </div>
               <li>
-                <a href="tel:+23481012346852">
+                <a href="tel:+2349043299793">
                   <span className="text-[#EDF5FD] text-[16px] leading-[24px] font-[126]">
-                    + 234 810 123 46852
+                    + 234-904-329-9793
                   </span>
                 </a>
               </li>

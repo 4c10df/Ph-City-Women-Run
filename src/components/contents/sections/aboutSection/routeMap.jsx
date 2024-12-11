@@ -55,7 +55,7 @@ function RouteMap({ id }) {
 
   if (error) {
     return (
-      <p className="h-[30vh] flex justify-center items-center text-[20px] text-white">
+      <p className="h-[30vh] flex justify-center items-center text-[20px] text-white w-full">
         Unable to fetch data. Please try again later.
       </p>
     );

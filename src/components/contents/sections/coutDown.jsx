@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/countdown.css";
 import Button from "../Button";
 
-const Countdown = ({ targetDate }) => {
+const Countdown = ({ targetDate, openOverlay }) => {
   // Function to calculate the time left
   const calculateTimeLeft = () => {
     const now = new Date();
@@ -69,6 +69,9 @@ const Countdown = ({ targetDate }) => {
         className="flex pt-[20px] justify-start w-full silver:w-[331px] z-40"
       >
         <Button
+          onClick={() => {
+            openOverlay();
+          }}
           size="play"
           className="!bg-[#5C176F]"
           disabled={isButtonDisabled}

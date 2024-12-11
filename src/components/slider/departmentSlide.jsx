@@ -53,14 +53,14 @@ const DepartmentSlider = () => {
   if (loading) return <Loading />;
   if (error) return <p>Error fetching data</p>;
   return (
-    <section className="flex flex-col justify-center items-center relative w-full ">
+    <section className="flex flex-col justify-center items-center relative w-full py-[70px]">
       <div className=" w-full flex flex-col justify-center items-center !overflow-hidden">
         {/* <GoChevronLeft className="swiper-button-prev-shirt !hidden at500:!flex at500:left-[-46px] w-[20px]" />
 
         <GoChevronRight className="swiper-button-next-shirt !hidden at500:!flex  at500:right-[-46px] w-[20px]" /> */}
 
         <div className="static  auto-container flex flex-col justify-center items-center w-full px-[15px] pb-[20px] at500:px-[72px] my-0 mx-auto">
-          <div className="flex justify-between items-center w-full">
+          <div className="flex flex-col gap-2  sm:flex-row justify-between items-start sm:items-center w-full">
             <div className="flex bg-[#5C176F] justify-start items-start lg:w-[400px] px-[24px] py-[10px] rounded-r-[12px]">
               <h2 className="text-white text-[20px] !leading-[24px] sm:!leading-[32px] sm:!text-[24px]">
                 Volunteer Departments
@@ -75,7 +75,7 @@ const DepartmentSlider = () => {
             </div>
           </div>
         </div>
-        <div className="static  auto-container flex flex-col justify-center items-center w-full px-[15px] pb-[20px] at500:px-[72px] my-0 mx-auto ">
+        <div className="static  auto-container flex flex-col justify-center items-center w-full px-[15px] at500:px-[72px] my-0 mx-auto ">
           <Swiper
             className="relative flex flex-col justify-center lg:right-10 items-center sm:!py-[30px] lg:!px-[39px] w-full"
             style={{ width: "100%" }}

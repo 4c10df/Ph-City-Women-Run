@@ -75,7 +75,7 @@ const HeroSection = ({ openConferenceform }) => {
               backgroundPosition: "center",
             }}
           >
-            <div className="relative flex gap-[40px] flex-col justify-start items-start w-full  h-auto sm:h-[320px] md:w-[456px]">
+            <div className="relative flex gap-[40px] flex-col justify-start items-start w-full  h-auto sm:h-[320px] md:w-[476px]">
               <h4 className="text-white !font-[800] leading-[24px] sm:leading-[52px] sm:text-[40px]">
                 {data.title}
               </h4>

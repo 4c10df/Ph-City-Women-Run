@@ -15,9 +15,8 @@ function ContactUs() {
       <div className="flex flex-col justify-center items-center relative w-full">
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
+        <ContactInFo />
         <ContactHeroSection />
-        <ContactInFo/>
-
         <Footer />
       </div>
     </>

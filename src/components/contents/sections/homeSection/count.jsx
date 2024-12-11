@@ -5,11 +5,15 @@ import "aos/dist/aos.css";
 import imageTwo from "../../image/homeImg/dcc8aa87baa34c7dea8c7e8fa6006213.jpeg";
 import Countdown from "../coutDown";
 import Button from "../../Button";
+import SaveUrPotForm from "../../../form/saveUrPot";
 
 function Thecount() {
+  const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const openOverlay = () => setIsOpen(true);
+  const closeOverlay = () => setIsOpen(false);
 
   const hygraphEndpoint =
     "https://ap-south-1.cdn.hygraph.com/content/cm25wyi9i064707wegesycex9/master";
@@ -65,9 +69,10 @@ function Thecount() {
         backgroundPosition: "center",
       }}
     >
+      <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
       <div className="static auto-container flex flex-col justify-center items-center w-full h-auto px-[15px] py-[25px] sm:py-[10px] sm:px-[72px] my-0 mx-auto">
         <div className="bg-[#8D12AB] flex justify-center items-center rounded-[16px] silver:py-[4px] p-[15px] sm:px-[40px] w-full">
-          <Countdown targetDate={data.schedule} />
+          <Countdown targetDate={data.schedule} openOverlay={openOverlay} />
         </div>
       </div>
     </section>

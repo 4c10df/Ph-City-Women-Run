@@ -18,8 +18,10 @@ function News() {
         <Navbar openOverlay={openOverlay} />
         <SaveUrPotForm isOpen={isOpen} closeOverlay={closeOverlay} />
         <EventNav />
-        <Partnership />
-        <Post />
+        {/* <Partnership /> */}
+        <div className="pt-[190px]">
+          <Post />
+        </div>
         <LatestNews />
 
         <Footer />

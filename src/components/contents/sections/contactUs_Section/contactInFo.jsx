@@ -65,7 +65,7 @@ function ContactInFo() {
 
   return (
     <>
-      <section className="bg-white relative flex flex-col justify-center items-center  w-full">
+      <section className="bg-white  pt-[150px]  relative flex flex-col justify-center items-center  w-full">
         <div className="static z-30 auto-container flex flex-col justify-center items-center w-full px-[15px] py-[70px] at500:px-[202px] my-0 mx-auto">
           <div className="relative flex gap-[20px] flex-col justify-center items-center w-full">
             <div className=" flex flex-col md:flex-row justify-start items-start gap-[10px] sm:gap-[22px] w-full">
@@ -105,11 +105,11 @@ function ContactInFo() {
                 <span className="text-[#4E5A6C] max-w-[456px] z-10">
                   Call us
                 </span>
-                <a href="tel: +13239090296">
+                <a href="tel: +2349043299793">
                   <li className="flex gap-2 justify-center items-center">
-                    <MdMailOutline className="text-[#353F50]" />
+                    <IoCallSharp className="text-[#353F50]" />
                     <p className="text-[#4E5A6C] text-[14px] leading-[20px]">
-                      +13239090296
+                      + 234-904-329-9793
                     </p>
                   </li>
                 </a>
@@ -118,12 +118,14 @@ function ContactInFo() {
                 <span className="text-[#4E5A6C] max-w-[456px] z-10">
                   Call us
                 </span>
-                <li className="flex gap-2 justify-center items-center">
-                  <IoCallSharp className="text-[#353F50]" />
-                  <p className="text-[#4E5A6C] text-[14px] leading-[20px]">
-                    phcitywomenrun@gmail.com
-                  </p>
-                </li>
+                <a href="tel: +2349043299793">
+                  <li className="flex gap-2 justify-center items-center">
+                    <IoCallSharp className="text-[#353F50]" />
+                    <p className="text-[#4E5A6C] text-[14px] leading-[20px]">
+                      + 234-904-329-9793
+                    </p>
+                  </li>
+                </a>
               </ul>
             </div>
           </div>

@@ -21,7 +21,7 @@ function footer() {
       className="relative flex flex-col justify-center items-center w-full h-auto !overflow-hidden"
     >
       <section className="bg-[#1F2126] relative flex flex-col justify-center items-center w-full ">
-        <div className="static z-30 w-full flex flex-col justify-center items-center max-w-[1080px] py-[50px] px-[15px] at500:px-[64px] my-0 mx-auto ">
+        <div className="static z-30 w-full flex flex-col justify-center items-center max-w-[1180px] py-[50px] px-[15px] at500:px-[64px] my-0 mx-auto ">
           <div className="flex flex-col justify-center items-center w-full ">
             <div className="flex flex-col justify-start items-start  w-full pb-[30px] ">
               <div className="flex flex-col justify-center items-start  w-full  cursor-pointer ">
@@ -133,10 +133,7 @@ function footer() {
             {/* <!--hr line--> */}
             <hr className="h-[2px] w-full bg-[#111E2F]" />
             {/* <!--copyright--> */}
-            <ul
-              
-              className="flex flex-col gap-[6px] justify-start items-start w-full h-auto my-[30px] "
-            >
+            <ul className="flex flex-col gap-[6px] justify-start items-start w-full h-auto my-[30px] ">
               <li className="flex w-full ">
                 <p className="text-[#FFFFFF] leading-[17.36px] text-left text-[14px] !font-[126]">
                   © {currentYear} PH City Women Run. All rights reserved.
@@ -151,12 +148,12 @@ function footer() {
             </ul>
           </div>
         </div>
-        <div className=" absolute flex justify-end items-end bottom-[-4px] w-full auto-container">
+        {/* <div className=" absolute flex justify-end items-end bottom-[-4px] w-full auto-container">
           <span className="flex shape11 relative right-[-17px] top-[158px] w-[200px] h-[367px] object-cover overflow-hidden"></span>
         </div>
         <div className=" absolute flex justify-start items-start bottom-[-4px]  w-full auto-container ">
-          <span className=" w-[200px] h-[367px] relative left-[159px]  flex shape13  "></span>
-        </div>
+          <span className=" w-[200px] h-[367px] relative left-[159px]  flex shape13 object-cover  overflow-hidden"></span>
+        </div> */}
       </section>
     </footer>
   );

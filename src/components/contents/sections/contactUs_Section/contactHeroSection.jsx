@@ -64,7 +64,7 @@ function ContactHeroSection() {
 
   return (
     <>
-      <section className="relative pt-[150px] flex flex-col justify-center items-center  bg-[#EDF5FD] h-auto w-full overflow-hidden">
+      <section className="relative flex flex-col justify-center items-center  bg-[#EDF5FD] h-auto w-full overflow-hidden">
         <div className="static flex flex-col justify-center items-center w-full  ">
           <iframe
             title="Google Map"

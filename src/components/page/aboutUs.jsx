@@ -42,7 +42,7 @@ function AboutUs() {
   return (
     <>
       <PageTitle
-        title="My Page Title"
+        title="The Run "
         description="This is a description of the page."
         keywords="the run"
       />

@@ -61,7 +61,7 @@ function Rules() {
     );
   if (error)
     return (
-      <p className="h-[30vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white">
+      <p className="h-[30vh] custom-blur-shadow  flex justify-center items-center leading-tight text-[20px] text-white w-full">
         Let's get you back online
       </p>
     );

@@ -78,13 +78,13 @@ function BecomeAteam({ openVolunteerform }) {
                   data-aos="zoom-in"
                   className="flex justify-start w-full at500:w-[201px] z-40"
                 >
-                  <Button
+                  {/* <Button
                     onClick={openVolunteerform}
                     size="play"
                     className="!bg-[#5C176F]"
                   >
                     Register Now
-                  </Button>
+                  </Button> */}
                 </div>
               </div>
             </div>

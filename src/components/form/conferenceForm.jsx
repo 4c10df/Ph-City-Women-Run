@@ -203,17 +203,21 @@ const ConferenceForm = ({ isOpenConferenceform, closeConferenceform }) => {
                   <div className="w-full">
                     <label>
                       How did you hear about us
-                      <em style={{ color: "red" }}>*</em>
+                      <em style={{ color: "red" }}></em>
                     </label>
                     <select
                       name="shirtSize"
                       value={formData.shirtSize}
                       onChange={handleChange}
-                      required
+                     
                     >
                       <option value="">Select </option>
-                      <option value="small">socail</option>
-                      <option value="medium">from a friend</option>
+                      <option value="Social Media">Social Media</option>
+                      <option value="A Friend">A Friend</option>
+                      <option value="Work Colleague">Work Colleague</option>
+                      <option value="Email Newsletter">Email Newsletter</option>
+                      <option value="WhatsApp group">WhatsApp group</option>
+                      <option value="Others">Others (specify)</option>
                     </select>
                   </div>
                 </div>
